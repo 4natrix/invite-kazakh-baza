@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Қазақ стилі | Базовое</title>
+    <title>Қазақ стилі | Базовое приглашение</title>
     <style>
         * {
             margin: 0;
@@ -12,107 +12,212 @@
         }
         
         body {
-            background: #f5efe6;
-            background-image: 
-                linear-gradient(45deg, rgba(0, 128, 128, 0.03) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(0, 128, 128, 0.03) 25%, transparent 25%);
-            background-size: 60px 60px;
+            background: #2d1f0e;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-family: 'Cormorant Garamond', 'Times New Roman', 'Qaz', serif;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(181, 126, 76, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(0, 102, 102, 0.15) 0%, transparent 30%);
         }
         
+        /* Основная карточка */
         .card {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
-            background: #fffaf2;
-            border-radius: 40px 40px 40px 40px;
-            padding: 40px 30px;
-            box-shadow: 0 30px 50px rgba(139, 69, 19, 0.15);
+            background: #fcf5e8;
+            border-radius: 60px 60px 60px 60px;
+            padding: 50px 40px;
+            box-shadow: 0 40px 70px rgba(0,0,0,0.4);
             position: relative;
-            border: 2px solid #b68b6d;
+            border: 8px solid #8b5a2b;
+            outline: 2px solid #c49a6c;
+            outline-offset: 4px;
+            background-image: 
+                linear-gradient(45deg, rgba(181, 126, 76, 0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(181, 126, 76, 0.03) 25%, transparent 25%);
+            background-size: 30px 30px;
         }
         
-        /* Орнамент сверху */
+        /* ===== ОРНАМЕНТЫ ===== */
+        
+        /* Верхний сложный орнамент */
         .ornament-top {
             position: absolute;
-            top: 0;
+            top: -5px;
             left: 0;
             right: 0;
-            height: 30px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="100" height="30"><path d="M10,15 L20,5 L30,15 L40,5 L50,15 L60,5 L70,15 L80,5 L90,15" stroke="%23b22222" fill="none" stroke-width="2"/><path d="M10,25 L20,15 L30,25 L40,15 L50,25 L60,15 L70,25 L80,15 L90,25" stroke="%23008080" fill="none" stroke-width="2"/></svg>') repeat-x top;
-            opacity: 0.8;
+            height: 50px;
+            background: repeating-linear-gradient(90deg, 
+                transparent, 
+                transparent 15px,
+                #8b5a2b 15px,
+                #8b5a2b 17px,
+                transparent 17px,
+                transparent 32px,
+                #b22222 32px,
+                #b22222 34px,
+                transparent 34px,
+                transparent 49px,
+                #008080 49px,
+                #008080 51px,
+                transparent 51px,
+                transparent 66px
+            );
+            opacity: 0.6;
+            z-index: 5;
         }
         
-        /* Орнамент снизу */
+        /* Нижний сложный орнамент */
         .ornament-bottom {
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             right: 0;
-            height: 30px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="100" height="30"><path d="M10,5 L20,15 L30,5 L40,15 L50,5 L60,15 L70,5 L80,15 L90,5" stroke="%23b22222" fill="none" stroke-width="2"/><path d="M10,15 L20,25 L30,15 L40,25 L50,15 L60,25 L70,15 L80,25 L90,15" stroke="%23008080" fill="none" stroke-width="2"/></svg>') repeat-x bottom;
-            opacity: 0.8;
+            height: 50px;
+            background: repeating-linear-gradient(90deg, 
+                transparent, 
+                transparent 15px,
+                #008080 15px,
+                #008080 17px,
+                transparent 17px,
+                transparent 32px,
+                #8b5a2b 32px,
+                #8b5a2b 34px,
+                transparent 34px,
+                transparent 49px,
+                #b22222 49px,
+                #b22222 51px,
+                transparent 51px,
+                transparent 66px
+            );
+            opacity: 0.6;
+            z-index: 5;
         }
         
-        /* Угловые орнаменты */
+        /* Левый вертикальный орнамент */
+        .ornament-left {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            bottom: 50px;
+            width: 30px;
+            background: repeating-linear-gradient(180deg,
+                transparent,
+                transparent 15px,
+                #8b5a2b 15px,
+                #8b5a2b 17px,
+                transparent 17px,
+                transparent 32px,
+                #b22222 32px,
+                #b22222 34px,
+                transparent 34px,
+                transparent 49px,
+                #008080 49px,
+                #008080 51px,
+                transparent 51px,
+                transparent 66px
+            );
+            opacity: 0.5;
+        }
+        
+        /* Правый вертикальный орнамент */
+        .ornament-right {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            bottom: 50px;
+            width: 30px;
+            background: repeating-linear-gradient(180deg,
+                transparent,
+                transparent 15px,
+                #008080 15px,
+                #008080 17px,
+                transparent 17px,
+                transparent 32px,
+                #8b5a2b 32px,
+                #8b5a2b 34px,
+                transparent 34px,
+                transparent 49px,
+                #b22222 49px,
+                #b22222 51px,
+                transparent 51px,
+                transparent 66px
+            );
+            opacity: 0.5;
+        }
+        
+        /* Угловые орнаменты (кошкар муйиз) */
         .corner {
             position: absolute;
-            width: 70px;
-            height: 70px;
-            opacity: 0.4;
+            width: 100px;
+            height: 100px;
+            z-index: 10;
         }
         
         .corner-tl {
             top: 10px;
             left: 10px;
-            background: radial-gradient(circle at 0 0, transparent 50%, #b68b6d 100%);
-            border-top: 3px solid #b22222;
-            border-left: 3px solid #008080;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-tr {
             top: 10px;
             right: 10px;
-            background: radial-gradient(circle at 100% 0, transparent 50%, #b68b6d 100%);
-            border-top: 3px solid #b22222;
-            border-right: 3px solid #008080;
+            transform: rotate(90deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-bl {
             bottom: 10px;
             left: 10px;
-            background: radial-gradient(circle at 0 100%, transparent 50%, #b68b6d 100%);
-            border-bottom: 3px solid #b22222;
-            border-left: 3px solid #008080;
+            transform: rotate(-90deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-br {
             bottom: 10px;
             right: 10px;
-            background: radial-gradient(circle at 100% 100%, transparent 50%, #b68b6d 100%);
-            border-bottom: 3px solid #b22222;
-            border-right: 3px solid #008080;
+            transform: rotate(180deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background-size: contain;
+        }
+        
+        /* Текстура войлока (фон) */
+        .felt-texture {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: radial-gradient(circle at 30% 30%, rgba(139, 90, 43, 0.05) 4px, transparent 4px),
+                        radial-gradient(circle at 70% 70%, rgba(0, 102, 102, 0.05) 4px, transparent 4px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 1;
         }
         
         .content {
             position: relative;
-            z-index: 2;
+            z-index: 20;
             text-align: center;
         }
         
-        /* Шаңырақ (символ) */
+        /* Шаңырақ (усиленный) */
         .shanyrak {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            border: 3px solid #b68b6d;
-            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
             position: relative;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(139, 90, 43, 0.1);
+            border-radius: 50%;
+            border: 4px solid #b22222;
         }
         
         .shanyrak::before {
@@ -121,242 +226,319 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
-            background: #b22222;
+            width: 30px;
+            height: 30px;
+            background: #008080;
             border-radius: 50%;
+            border: 3px solid #c49a6c;
         }
         
-        .shanyrak::after {
-            content: '';
+        .shanyrak .spoke {
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
+            width: 3px;
             height: 100%;
-            background: #b68b6d;
-        }
-        
-        .shanyrak span {
-            position: absolute;
-            width: 2px;
-            height: 100%;
-            background: #b68b6d;
+            background: #b22222;
             transform-origin: center;
         }
         
-        .shanyrak span:nth-child(1) { transform: rotate(45deg); }
-        .shanyrak span:nth-child(2) { transform: rotate(90deg); }
-        .shanyrak span:nth-child(3) { transform: rotate(135deg); }
+        .shanyrak .spoke:nth-child(1) { transform: rotate(0deg); }
+        .shanyrak .spoke:nth-child(2) { transform: rotate(45deg); }
+        .shanyrak .spoke:nth-child(3) { transform: rotate(90deg); }
+        .shanyrak .spoke:nth-child(4) { transform: rotate(135deg); }
+        
+        /* Декоративные кисточки (шашақ) */
+        .tassel {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #b22222;
+            border-radius: 10px 10px 0 0;
+            z-index: 25;
+        }
+        
+        .tassel::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 20px;
+            height: 15px;
+            background: repeating-linear-gradient(45deg, #008080, #008080 5px, #b22222 5px, #b22222 10px);
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .tassel-left {
+            top: 30px;
+            left: -10px;
+            transform: rotate(10deg);
+        }
+        
+        .tassel-right {
+            top: 30px;
+            right: -10px;
+            transform: rotate(-10deg);
+        }
         
         .event-type {
-            font-size: 18px;
-            letter-spacing: 4px;
-            color: #008080;
-            margin-bottom: 10px;
+            font-size: 22px;
+            letter-spacing: 8px;
+            color: #8b5a2b;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .couple {
-            font-size: 48px;
-            font-weight: 600;
+            font-size: 58px;
+            font-weight: 700;
             color: #b22222;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             line-height: 1.2;
             font-family: 'Times New Roman', serif;
+            text-shadow: 2px 2px 0 #c49a6c;
         }
         
         .couple span {
             display: inline-block;
-            font-size: 32px;
+            font-size: 42px;
             color: #008080;
-            margin: 0 10px;
+            margin: 0 15px;
+            text-shadow: 2px 2px 0 #8b5a2b;
         }
         
-        .kazakh-word {
-            font-size: 16px;
-            color: #b68b6d;
+        .kazakh-blessing {
+            font-size: 24px;
+            color: #8b5a2b;
             font-style: italic;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            background: rgba(0, 128, 128, 0.1);
+            display: inline-block;
+            padding: 8px 30px;
+            border-radius: 50px;
+            border: 2px dashed #b22222;
         }
         
         .date-box {
-            background: linear-gradient(135deg, #fffaf2, #f0e4d5);
-            border: 2px solid #b68b6d;
-            border-radius: 100px;
-            padding: 15px 25px;
-            margin: 25px 0;
-            box-shadow: inset 0 0 15px rgba(182, 139, 109, 0.2);
+            background: #f0e4d5;
+            border: 4px double #b22222;
+            border-radius: 200px 200px 200px 200px;
+            padding: 20px 25px;
+            margin: 30px 0;
+            box-shadow: inset 0 0 20px rgba(139, 90, 43, 0.2);
+            position: relative;
+            border-left: 4px solid #008080;
+            border-right: 4px solid #008080;
         }
         
+        .date-box::before, .date-box::after {
+            content: '❈';
+            color: #b22222;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .date-box::before { left: 15px; }
+        .date-box::after { right: 15px; }
+        
         .date {
-            font-size: 36px;
-            font-weight: 600;
+            font-size: 44px;
+            font-weight: 700;
             color: #b22222;
             line-height: 1.2;
         }
         
         .date small {
-            font-size: 18px;
+            font-size: 22px;
             color: #008080;
             display: block;
+            letter-spacing: 3px;
         }
         
         .venue {
-            font-size: 24px;
-            color: #b68b6d;
+            font-size: 32px;
+            color: #8b5a2b;
             margin: 15px 0 5px;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
         }
         
         .address {
-            font-size: 18px;
+            font-size: 20px;
             color: #008080;
             margin-bottom: 15px;
             font-style: italic;
-        }
-        
-        .time {
-            font-size: 20px;
-            color: #b22222;
-            margin: 20px 0;
-            padding: 10px;
-            border-top: 2px solid #008080;
-            border-bottom: 2px solid #008080;
+            background: rgba(139, 90, 43, 0.1);
+            padding: 5px 15px;
+            border-radius: 50px;
             display: inline-block;
         }
         
+        .time {
+            font-size: 22px;
+            color: #b22222;
+            margin: 25px 0;
+            padding: 15px 25px;
+            background: rgba(0, 128, 128, 0.1);
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
         .rsvp {
-            margin: 30px 0 20px;
+            margin: 35px 0 25px;
             padding: 20px;
-            background: rgba(0, 128, 128, 0.05);
-            border-radius: 30px;
+            background: linear-gradient(145deg, #fcf5e8, #f0e4d5);
+            border-radius: 80px;
+            border: 3px solid #8b5a2b;
         }
         
         .rsvp-label {
-            font-size: 14px;
-            letter-spacing: 2px;
-            color: #b68b6d;
-            margin-bottom: 15px;
+            font-size: 16px;
+            letter-spacing: 4px;
+            color: #8b5a2b;
+            margin-bottom: 20px;
             text-transform: uppercase;
+            font-weight: 600;
         }
         
         .contact-button {
             display: inline-block;
             background: #b22222;
             color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
+            padding: 18px 45px;
+            border-radius: 60px;
             text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            border: 2px solid #008080;
+            font-size: 20px;
+            font-weight: 600;
+            border: 3px solid #008080;
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
         }
         
         .contact-button:hover {
             background: #8b1a1a;
             transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(178, 34, 34, 0.6);
         }
         
         .organizer {
             margin-top: 25px;
-            font-size: 18px;
-            color: #b68b6d;
+            font-size: 20px;
+            color: #8b5a2b;
         }
         
         .organizer a {
             color: #008080;
             text-decoration: none;
-            border-bottom: 1px dashed #008080;
+            border-bottom: 2px dotted #b22222;
+            font-weight: 600;
         }
         
         .footer {
-            margin-top: 30px;
+            margin-top: 35px;
             padding-top: 20px;
-            border-top: 2px solid #b68b6d;
-            font-size: 14px;
-            color: #b68b6d;
+            border-top: 3px solid #b22222;
+            font-size: 16px;
+            color: #8b5a2b;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
+            letter-spacing: 2px;
         }
         
         .footer span {
-            color: #b22222;
+            color: #008080;
+            font-weight: 600;
         }
         
         @media (max-width: 480px) {
-            .card { padding: 30px 20px; }
-            .couple { font-size: 36px; }
-            .date { font-size: 28px; }
+            .card { padding: 40px 20px; }
+            .couple { font-size: 42px; }
+            .couple span { font-size: 32px; }
+            .date { font-size: 32px; }
+            .date small { font-size: 18px; }
+            .venue { font-size: 24px; }
+            .time { font-size: 18px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Орнаменты -->
+        <!-- Все орнаменты -->
         <div class="ornament-top"></div>
         <div class="ornament-bottom"></div>
+        <div class="ornament-left"></div>
+        <div class="ornament-right"></div>
+        
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
         <div class="corner corner-br"></div>
         
+        <div class="felt-texture"></div>
+        
+        <!-- Декоративные кисточки -->
+        <div class="tassel tassel-left"></div>
+        <div class="tassel tassel-right"></div>
+        
         <div class="content">
             <!-- Шаңырақ -->
             <div class="shanyrak">
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
             </div>
             
-            <!-- Тип мероприятия -->
+            <!-- Тип мероприятия на казахском -->
             <div class="event-type">ҰЛТТЫҚ ТОЙ</div>
             
-            <!-- Имена -->
+            <!-- Имена (национальные) -->
             <h1 class="couple">
                 ЕРБОЛ <span>&</span> АЙГҮЛ
             </h1>
             
-            <div class="kazakh-word">Құтты болсын!</div>
+            <!-- Благословение -->
+            <div class="kazakh-blessing">Құтты болсын! •  Береке болсын!</div>
             
             <!-- Дата -->
             <div class="date-box">
                 <div class="date">
                     15 ТАМЫЗ 2026
-                    <small>сәбі</small>
+                    <small>сенбі • 18:00</small>
                 </div>
             </div>
             
-            <!-- Место -->
+            <!-- Место проведения (с казахским названием) -->
             <div class="venue">«АЛТЫН ОРДА»</div>
             <div class="address">Алматы облысы, Қарасай ауданы</div>
             
-            <!-- Время -->
+            <!-- Время (на казахском) -->
             <div class="time">
-                Қонақтарды жинау 17:00 • Рәсім 18:00
+                Қонақтарды жинау • 17:00
             </div>
             
-            <!-- RSVP -->
+            <!-- RSVP с WhatsApp организатора -->
             <div class="rsvp">
                 <div class="rsvp-label">ҚАТЫСУЫҢЫЗДЫ РАСТАҢЫЗ</div>
                 <a href="https://wa.me/77771234567?text=Құрметті%20ЕРБОЛ%20және%20АЙГҮЛ!%20Мен%20тойға%20қатысамын" target="_blank" class="contact-button">
-                    Ұйымдастырушы
+                    WhatsApp
                 </a>
             </div>
             
-            <!-- Организатор -->
+            <!-- Контакты организатора -->
             <div class="organizer">
                 Ұйымдастырушы: <a href="tel:+77771234567">Айгүл, +7 (777) 123-45-67</a>
             </div>
             
-            <!-- Футер -->
+            <!-- Футер с казахскими элементами -->
             <div class="footer">
-                <span>АЛМАТЫ</span> • 2026
+                <span>АЛМАТЫ</span> • 2026 • <span>БЕРЕКЕ</span>
             </div>
         </div>
     </div>
