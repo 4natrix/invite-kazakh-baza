@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <title>Айбек & Айгерим | Свадебное приглашение</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Marck+Script&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      color: #f6ead1;
+      background:
+        linear-gradient(rgba(7, 34, 49, 0.82), rgba(7, 34, 49, 0.88)),
+        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat fixed;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background:
+        linear-gradient(180deg, rgba(11, 53, 73, 0.94), rgba(8, 38, 53, 0.96));
+      border: 1px solid rgba(212, 177, 97, 0.45);
+      border-radius: 30px;
+      padding: 50px 34px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before,
+    .card::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      opacity: 0.16;
+      background-repeat: no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    .card::before {
+      top: 12px;
+      left: 12px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
+    }
+
+    .card::after {
+      right: 12px;
+      bottom: 12px;
+      transform: rotate(180deg);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
+    }
+
+    .label {
+      font-size: 0.78rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #d9ba74;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      color: #d4b161;
+    }
+
+    .ornament-line::before,
+    .ornament-line::after {
+      content: '';
+      width: 70px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d4b161, transparent);
+    }
+
+    .ornament-line i {
+      font-size: 1.1rem;
+    }
+
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      line-height: 1.05;
+      font-weight: 700;
+      color: #fff7e8;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .amp {
+      display: block;
+      font-family: 'Marck Script', cursive;
+      font-size: 2.5rem;
+      color: #d8bb79;
+      font-weight: 400;
+      margin: 4px 0;
+    }
+
+    .subtitle {
+      font-family: 'Marck Script', cursive;
+      font-size: 2rem;
+      color: #f0dba9;
+      margin-bottom: 22px;
+    }
+
+    .date {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.95rem;
+      color: #d7b66a;
+      margin-bottom: 26px;
+      letter-spacing: 2px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 177, 97, 0.28);
+      border-radius: 22px;
+      padding: 24px 18px;
+      margin-bottom: 24px;
+    }
+
+    .venue {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff3d5;
+      margin-bottom: 8px;
+    }
+
+    .address,
+    .time,
+    .contact-person {
+      color: #d8d3c8;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .time {
+      margin-top: 10px;
+      color: #d7b66a;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+
+    .divider {
+      width: 76px;
+      height: 1px;
+      margin: 24px auto;
+      border: none;
+      background: linear-gradient(to right, transparent, #d4b161, transparent);
+    }
+
+    .quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      color: #f2e6c5;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+
+    .rsvp-text {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #d7b66a;
+      margin-bottom: 20px;
+    }
+
+    .phone-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 320px;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 15px 24px;
+      background: linear-gradient(135deg, #d5b166, #b88d3e);
+      color: #0b3549;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(212, 177, 97, 0.2);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .phone-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(212, 177, 97, 0.28);
+    }
+
+    .contact-person {
+      margin-top: 18px;
+    }
+
+    .footer-city {
+      margin-top: 24px;
+      color: #d7b66a;
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 38px 22px;
+      }
+
+      .names {
+        font-size: 2.9rem;
+      }
+
+      .amp {
+        font-size: 2.1rem;
+      }
+
+      .subtitle {
+        font-size: 1.7rem;
+      }
+
+      .date {
+        font-size: 1.55rem;
+      }
+
+      .venue {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      html { font-size: 14px; }
+      .names { font-size: 2.45rem; }
+      .subtitle { font-size: 1.45rem; }
+      .phone-btn { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Үйлену тойына шақыру</div>
+
+    <div class="ornament-line">
+      <i class="fa-solid fa-diamond"></i>
+    </div>
+
+    <h1 class="names">
+      Айбек
+      <span class="amp">&</span>
+      Айгерим
+    </h1>
+
+    <div class="subtitle">Қуанышымызға ортақ болыңыздар</div>
+    <div class="date">26 маусым 2026</div>
+
+    <div class="info-box">
+      <div class="venue">Ресторан «Дәстүрлік»</div>
+      <div class="address">Астана қ., Тәуелсіздік даңғылы, 15</div>
+      <div class="time">Басталуы 18:00</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="quote">«Бұл қуанышты күнді сіздермен бірге өткізгіміз келеді»</div>
+
+    <div class="rsvp-text">Қатысатыныңызды растаңыз</div>
+
+    <a href="tel:+77771234567" class="phone-btn">
+      <i class="fas fa-phone-alt"></i>
+      Қоңырау шалу
+    </a>
+
+    <div class="contact-person">Айгүл, ұйымдастырушы: +7 (777) 123-45-67</div>
+    <div class="footer-city">Астана • 2026</div>
+  </div>
+</body>
+</html>
