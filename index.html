@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Қазақ стилі | Базовое приглашение</title>
+    <title>Қазақ орнаменті | Базовое приглашение</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #0e3b45 0%, #1e5568 50%, #124a5a 100%);
+            background: linear-gradient(145deg, #0c2f3a 0%, #1a4857 50%, #0f3b47 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -22,7 +22,7 @@
             position: relative;
         }
         
-        /* Мягкое свечение */
+        /* Мягкое свечение фона */
         body::before {
             content: '';
             position: absolute;
@@ -30,168 +30,125 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
-                        radial-gradient(circle at 70% 60%, rgba(100, 180, 200, 0.12) 0%, transparent 45%);
+            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(70, 150, 170, 0.15) 0%, transparent 50%);
             pointer-events: none;
         }
         
         .card {
-            max-width: 680px;
+            max-width: 700px;
             width: 100%;
-            background: #fcf8f0;
-            border-radius: 70px 70px 70px 70px;
+            background: #fcf5e7;
+            border-radius: 80px 80px 80px 80px;
             padding: 60px 50px;
             box-shadow: 
-                0 40px 70px -15px rgba(0, 0, 0, 0.7),
-                0 0 0 4px #a67c52,
-                0 0 0 10px #e8d9c4;
+                0 50px 80px -15px rgba(0, 0, 0, 0.8),
+                0 0 0 4px #9c7a5a,
+                0 0 0 12px #e3d4bd;
             position: relative;
             overflow: hidden;
         }
         
-        /* ===== ЛИНИИ В КАЗАХСКОМ СТИЛЕ ===== */
+        /* ===== ОСНОВНЫЕ ОРНАМЕНТЫ (как на твоем примере) ===== */
         
-        /* Верхняя группа линий */
-        .lines-top {
+        /* Верхний орнамент - непрерывная полоса */
+        .ornament-top {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: linear-gradient(
-                90deg,
-                #b8860b 0%, #b8860b 5px,
-                transparent 5px, transparent 15px,
-                #006688 15px, #006688 20px,
-                transparent 20px, transparent 30px,
-                #8b5a2b 30px, #8b5a2b 35px,
-                transparent 35px, transparent 45px,
-                #b8860b 45px, #b8860b 50px,
-                transparent 50px, transparent 60px,
-                #006688 60px, #006688 65px,
-                transparent 65px, transparent 75px
-            );
-            background-size: 75px 30px;
-            opacity: 0.5;
+            top: 15px;
+            left: 40px;
+            right: 40px;
+            height: 35px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 35"><path d="M30,17 L45,8 L60,17 L75,8 L90,17 L105,8 L120,17 L135,8 L150,17 L165,8 L180,17 L195,8 L210,17 L225,8 L240,17 L255,8 L270,17" stroke="%239c7a5a" fill="none" stroke-width="2.5"/><path d="M45,22 L60,13 L75,22 L90,13 L105,22 L120,13 L135,22 L150,13 L165,22 L180,13 L195,22 L210,13 L225,22 L240,13 L255,22" stroke="%233f7e8c" fill="none" stroke-width="2"/><circle cx="52" cy="12" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="142" cy="12" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="232" cy="12" r="3" fill="%23b8860b" opacity="0.7"/></svg>') repeat-x;
+            background-size: 300px 35px;
+            z-index: 5;
         }
         
-        /* Нижняя группа линий */
-        .lines-bottom {
+        /* Нижний орнамент */
+        .ornament-bottom {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: linear-gradient(
-                90deg,
-                #006688 0%, #006688 5px,
-                transparent 5px, transparent 15px,
-                #8b5a2b 15px, #8b5a2b 20px,
-                transparent 20px, transparent 30px,
-                #b8860b 30px, #b8860b 35px,
-                transparent 35px, transparent 45px,
-                #006688 45px, #006688 50px,
-                transparent 50px, transparent 60px,
-                #8b5a2b 60px, #8b5a2b 65px,
-                transparent 65px, transparent 75px
-            );
-            background-size: 75px 30px;
-            opacity: 0.5;
+            bottom: 15px;
+            left: 40px;
+            right: 40px;
+            height: 35px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 35"><path d="M30,18 L45,27 L60,18 L75,27 L90,18 L105,27 L120,18 L135,27 L150,18 L165,27 L180,18 L195,27 L210,18 L225,27 L240,18 L255,27 L270,18" stroke="%233f7e8c" fill="none" stroke-width="2.5"/><path d="M45,13 L60,22 L75,13 L90,22 L105,13 L120,22 L135,13 L150,22 L165,13 L180,22 L195,13 L210,22 L225,13 L240,22 L255,13" stroke="%239c7a5a" fill="none" stroke-width="2"/><circle cx="97" cy="24" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="197" cy="24" r="3" fill="%23b8860b" opacity="0.7"/></svg>') repeat-x;
+            background-size: 300px 35px;
+            z-index: 5;
         }
         
-        /* Левая группа линий */
-        .lines-left {
+        /* Левый орнамент */
+        .ornament-left {
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 25px;
-            background: linear-gradient(
-                180deg,
-                #b8860b 0%, #b8860b 5px,
-                transparent 5px, transparent 15px,
-                #006688 15px, #006688 20px,
-                transparent 20px, transparent 30px,
-                #8b5a2b 30px, #8b5a2b 35px,
-                transparent 35px, transparent 45px,
-                #b8860b 45px, #b8860b 50px,
-                transparent 50px, transparent 60px,
-                #006688 60px, #006688 65px,
-                transparent 65px, transparent 75px
-            );
-            background-size: 25px 75px;
-            opacity: 0.5;
+            top: 50px;
+            left: 12px;
+            bottom: 50px;
+            width: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 200"><path d="M15,30 L22,40 L15,50 L22,60 L15,70 L22,80 L15,90 L22,100 L15,110 L22,120 L15,130 L22,140 L15,150" stroke="%239c7a5a" fill="none" stroke-width="2.5"/><path d="M8,35 L15,45 L8,55 L15,65 L8,75 L15,85 L8,95 L15,105 L8,115 L15,125 L8,135 L15,145" stroke="%233f7e8c" fill="none" stroke-width="2"/><circle cx="15" cy="42" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="15" cy="92" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="15" cy="142" r="3" fill="%23b8860b" opacity="0.7"/></svg>') repeat-y;
+            background-size: 30px 200px;
+            z-index: 5;
+            opacity: 0.8;
         }
         
-        /* Правая группа линий */
-        .lines-right {
+        /* Правый орнамент */
+        .ornament-right {
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 25px;
-            background: linear-gradient(
-                180deg,
-                #006688 0%, #006688 5px,
-                transparent 5px, transparent 15px,
-                #8b5a2b 15px, #8b5a2b 20px,
-                transparent 20px, transparent 30px,
-                #b8860b 30px, #b8860b 35px,
-                transparent 35px, transparent 45px,
-                #006688 45px, #006688 50px,
-                transparent 50px, transparent 60px,
-                #8b5a2b 60px, #8b5a2b 65px,
-                transparent 65px, transparent 75px
-            );
-            background-size: 25px 75px;
-            opacity: 0.5;
+            top: 50px;
+            right: 12px;
+            bottom: 50px;
+            width: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 200"><path d="M15,30 L8,40 L15,50 L8,60 L15,70 L8,80 L15,90 L8,100 L15,110 L8,120 L15,130 L8,140 L15,150" stroke="%233f7e8c" fill="none" stroke-width="2.5"/><path d="M22,35 L15,45 L22,55 L15,65 L22,75 L15,85 L22,95 L15,105 L22,115 L15,125 L22,135 L15,145" stroke="%239c7a5a" fill="none" stroke-width="2"/><circle cx="15" cy="42" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="15" cy="92" r="3" fill="%23b8860b" opacity="0.7"/><circle cx="15" cy="142" r="3" fill="%23b8860b" opacity="0.7"/></svg>') repeat-y;
+            background-size: 30px 200px;
+            z-index: 5;
+            opacity: 0.8;
         }
         
-        /* Угловые акценты */
+        /* Угловые орнаменты - Қошқар мүйіз */
         .corner {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 100px;
+            height: 100px;
             z-index: 10;
         }
         
         .corner-tl {
-            top: 10px;
-            left: 10px;
-            border-top: 4px solid #b8860b;
-            border-left: 4px solid #b8860b;
+            top: 5px;
+            left: 5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M25,25 L40,10 L60,10 L75,25 L60,40 L75,55 L60,70 L40,70 L25,55 L40,40 L25,25Z" fill="none" stroke="%239c7a5a" stroke-width="2.5"/><path d="M38,38 L50,25 L65,25 L77,38 L65,51 L77,64 L65,77 L50,77 L38,64 L50,51 L38,38Z" fill="none" stroke="%233f7e8c" stroke-width="2"/><circle cx="50" cy="45" r="4" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-tr {
-            top: 10px;
-            right: 10px;
-            border-top: 4px solid #006688;
-            border-right: 4px solid #006688;
+            top: 5px;
+            right: 5px;
+            transform: rotate(90deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M25,25 L40,10 L60,10 L75,25 L60,40 L75,55 L60,70 L40,70 L25,55 L40,40 L25,25Z" fill="none" stroke="%239c7a5a" stroke-width="2.5"/><path d="M38,38 L50,25 L65,25 L77,38 L65,51 L77,64 L65,77 L50,77 L38,64 L50,51 L38,38Z" fill="none" stroke="%233f7e8c" stroke-width="2"/><circle cx="50" cy="45" r="4" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-bl {
-            bottom: 10px;
-            left: 10px;
-            border-bottom: 4px solid #006688;
-            border-left: 4px solid #006688;
+            bottom: 5px;
+            left: 5px;
+            transform: rotate(-90deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M25,25 L40,10 L60,10 L75,25 L60,40 L75,55 L60,70 L40,70 L25,55 L40,40 L25,25Z" fill="none" stroke="%239c7a5a" stroke-width="2.5"/><path d="M38,38 L50,25 L65,25 L77,38 L65,51 L77,64 L65,77 L50,77 L38,64 L50,51 L38,38Z" fill="none" stroke="%233f7e8c" stroke-width="2"/><circle cx="50" cy="45" r="4" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
+            background-size: contain;
         }
         
         .corner-br {
-            bottom: 10px;
-            right: 10px;
-            border-bottom: 4px solid #b8860b;
-            border-right: 4px solid #b8860b;
+            bottom: 5px;
+            right: 5px;
+            transform: rotate(180deg);
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M25,25 L40,10 L60,10 L75,25 L60,40 L75,55 L60,70 L40,70 L25,55 L40,40 L25,25Z" fill="none" stroke="%239c7a5a" stroke-width="2.5"/><path d="M38,38 L50,25 L65,25 L77,38 L65,51 L77,64 L65,77 L50,77 L38,64 L50,51 L38,38Z" fill="none" stroke="%233f7e8c" stroke-width="2"/><circle cx="50" cy="45" r="4" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
+            background-size: contain;
         }
         
-        /* Шаңырақ (минималистичный) */
+        /* Шаңырақ (упрощенный, чтобы не перегружать) */
         .shanyrak {
             width: 100px;
             height: 100px;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             position: relative;
             border: 4px solid #b8860b;
             border-radius: 50%;
-            box-shadow: 0 0 0 3px #006688;
+            box-shadow: 0 0 0 3px #3f7e8c;
         }
         
         .shanyrak::before {
@@ -200,14 +157,14 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 25px;
-            height: 25px;
-            background: #006688;
+            width: 22px;
+            height: 22px;
+            background: #3f7e8c;
             border-radius: 50%;
             border: 2px solid #b8860b;
         }
         
-        .shanyrak .line {
+        .shanyrak .spoke {
             position: absolute;
             top: 0;
             left: 50%;
@@ -217,10 +174,10 @@
             transform-origin: center;
         }
         
-        .shanyrak .line:nth-child(1) { transform: rotate(0deg); }
-        .shanyrak .line:nth-child(2) { transform: rotate(45deg); }
-        .shanyrak .line:nth-child(3) { transform: rotate(90deg); }
-        .shanyrak .line:nth-child(4) { transform: rotate(135deg); }
+        .shanyrak .spoke:nth-child(1) { transform: rotate(0deg); }
+        .shanyrak .spoke:nth-child(2) { transform: rotate(45deg); }
+        .shanyrak .spoke:nth-child(3) { transform: rotate(90deg); }
+        .shanyrak .spoke:nth-child(4) { transform: rotate(135deg); }
         
         .content {
             position: relative;
@@ -231,7 +188,7 @@
         .event-type {
             font-size: 20px;
             letter-spacing: 8px;
-            color: #8b5a2b;
+            color: #9c7a5a;
             margin-bottom: 10px;
             text-transform: uppercase;
         }
@@ -239,10 +196,10 @@
         .couple {
             font-size: 64px;
             font-weight: 600;
-            color: #0e3b45;
+            color: #0c2f3a;
             margin-bottom: 10px;
             line-height: 1.2;
-            text-shadow: 2px 2px 0 #e8d9c4;
+            text-shadow: 2px 2px 0 #e3d4bd;
         }
         
         .couple span {
@@ -254,7 +211,7 @@
         
         .blessing {
             font-size: 26px;
-            color: #006688;
+            color: #3f7e8c;
             font-style: italic;
             margin-bottom: 25px;
             padding: 10px 0;
@@ -264,40 +221,39 @@
         }
         
         .date-box {
-            border: 3px double #8b5a2b;
+            border: 3px double #9c7a5a;
             border-radius: 200px;
-            padding: 20px 35px;
+            padding: 22px 35px;
             margin: 30px 0;
-            background: rgba(166, 124, 82, 0.05);
+            background: rgba(156, 122, 90, 0.05);
         }
         
         .date {
             font-size: 48px;
             font-weight: 600;
-            color: #0e3b45;
+            color: #0c2f3a;
             line-height: 1.2;
         }
         
         .date small {
             font-size: 22px;
-            color: #006688;
+            color: #3f7e8c;
             display: block;
             letter-spacing: 4px;
         }
         
         .venue {
             font-size: 36px;
-            color: #8b5a2b;
+            color: #9c7a5a;
             margin: 15px 0 5px;
-            font-weight: 500;
         }
         
         .address {
             font-size: 20px;
-            color: #0e3b45;
+            color: #0c2f3a;
             margin-bottom: 20px;
             font-style: italic;
-            background: rgba(0, 102, 136, 0.08);
+            background: rgba(63, 126, 140, 0.08);
             padding: 8px 25px;
             display: inline-block;
             border-radius: 50px;
@@ -305,7 +261,7 @@
         
         .time {
             font-size: 22px;
-            color: #006688;
+            color: #3f7e8c;
             margin: 20px 0;
             padding: 12px 30px;
             background: rgba(184, 134, 11, 0.1);
@@ -316,9 +272,9 @@
         .rsvp {
             margin: 40px 0 30px;
             padding: 25px;
-            background: #0e3b45;
+            background: #0c2f3a;
             border-radius: 100px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
         
         .rsvp-label {
@@ -332,13 +288,13 @@
         .contact-button {
             display: inline-block;
             background: #b8860b;
-            color: #0e3b45;
+            color: #0c2f3a;
             padding: 18px 50px;
             border-radius: 60px;
             text-decoration: none;
             font-size: 20px;
             font-weight: 600;
-            border: 3px solid #e8d9c4;
+            border: 3px solid #e3d4bd;
             transition: all 0.4s ease;
         }
         
@@ -351,11 +307,11 @@
         .organizer {
             margin-top: 25px;
             font-size: 20px;
-            color: #0e3b45;
+            color: #0c2f3a;
         }
         
         .organizer a {
-            color: #006688;
+            color: #3f7e8c;
             text-decoration: none;
             border-bottom: 2px dotted #b8860b;
         }
@@ -363,17 +319,16 @@
         .footer {
             margin-top: 35px;
             padding-top: 20px;
-            border-top: 3px solid #8b5a2b;
+            border-top: 3px solid #9c7a5a;
             font-size: 16px;
-            color: #a67c52;
+            color: #9c7a5a;
             display: flex;
             justify-content: center;
             gap: 35px;
-            letter-spacing: 2px;
         }
         
         .footer span {
-            color: #006688;
+            color: #3f7e8c;
             font-weight: 600;
         }
         
@@ -385,18 +340,18 @@
             .date small { font-size: 18px; }
             .venue { font-size: 28px; }
             .blessing { font-size: 22px; }
+            .ornament-left, .ornament-right { opacity: 0.5; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Линии по краям -->
-        <div class="lines-top"></div>
-        <div class="lines-bottom"></div>
-        <div class="lines-left"></div>
-        <div class="lines-right"></div>
+        <!-- Все орнаменты как на твоем примере -->
+        <div class="ornament-top"></div>
+        <div class="ornament-bottom"></div>
+        <div class="ornament-left"></div>
+        <div class="ornament-right"></div>
         
-        <!-- Угловые акценты -->
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
@@ -405,10 +360,10 @@
         <div class="content">
             <!-- Шаңырақ -->
             <div class="shanyrak">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
+                <div class="spoke"></div>
             </div>
             
             <div class="event-type">ҚАЗАҚ ТОЙЫ</div>
