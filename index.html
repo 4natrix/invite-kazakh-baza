@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Қазақ стилі | Базовое приглашение</title>
+    <title>Qazaq Style | Базовое</title>
     <style>
         * {
             margin: 0;
@@ -12,395 +12,450 @@
         }
         
         body {
-            background: #2d1f0e;
             min-height: 100vh;
+            background: linear-gradient(145deg, #0b2b3f 0%, #1a4b6d 50%, #0e3a4f 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            font-family: 'Cormorant Garamond', 'Times New Roman', 'Qaz', serif;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(181, 126, 76, 0.15) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(0, 102, 102, 0.15) 0%, transparent 30%);
-        }
-        
-        /* Основная карточка */
-        .card {
-            max-width: 650px;
-            width: 100%;
-            background: #fcf5e8;
-            border-radius: 60px 60px 60px 60px;
-            padding: 50px 40px;
-            box-shadow: 0 40px 70px rgba(0,0,0,0.4);
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
             position: relative;
-            border: 8px solid #8b5a2b;
-            outline: 2px solid #c49a6c;
-            outline-offset: 4px;
+        }
+        
+        /* Звездное небо (фон) */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-image: 
-                linear-gradient(45deg, rgba(181, 126, 76, 0.03) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(181, 126, 76, 0.03) 25%, transparent 25%);
-            background-size: 30px 30px;
-        }
-        
-        /* ===== ОРНАМЕНТЫ ===== */
-        
-        /* Верхний сложный орнамент */
-        .ornament-top {
-            position: absolute;
-            top: -5px;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: repeating-linear-gradient(90deg, 
-                transparent, 
-                transparent 15px,
-                #8b5a2b 15px,
-                #8b5a2b 17px,
-                transparent 17px,
-                transparent 32px,
-                #b22222 32px,
-                #b22222 34px,
-                transparent 34px,
-                transparent 49px,
-                #008080 49px,
-                #008080 51px,
-                transparent 51px,
-                transparent 66px
-            );
+                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.7), rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 80px 120px, rgba(255, 215, 0, 0.6), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 200px, #fff, rgba(0,0,0,0)),
+                radial-gradient(4px 4px at 250px 90px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 350px 180px, #ffd700, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 300px, #fff, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 550px 120px, #87ceeb, rgba(0,0,0,0));
+            background-size: 600px 600px;
             opacity: 0.6;
-            z-index: 5;
+            pointer-events: none;
         }
         
-        /* Нижний сложный орнамент */
-        .ornament-bottom {
+        .card {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-radius: 80px 80px 80px 80px;
+            padding: 60px 50px;
+            box-shadow: 
+                0 50px 80px -20px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(255, 215, 0, 0.6) inset,
+                0 0 30px rgba(135, 206, 250, 0.5);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Основной орнаментальный фон (тумар) */
+        .card::before {
+            content: '';
             position: absolute;
-            bottom: -5px;
+            top: 0;
             left: 0;
             right: 0;
-            height: 50px;
-            background: repeating-linear-gradient(90deg, 
-                transparent, 
-                transparent 15px,
-                #008080 15px,
-                #008080 17px,
-                transparent 17px,
-                transparent 32px,
-                #8b5a2b 32px,
-                #8b5a2b 34px,
-                transparent 34px,
-                transparent 49px,
-                #b22222 49px,
-                #b22222 51px,
-                transparent 51px,
-                transparent 66px
-            );
-            opacity: 0.6;
-            z-index: 5;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><path d="M100,20 L115,60 L155,60 L125,85 L140,125 L100,105 L60,125 L75,85 L45,60 L85,60 L100,20 Z" fill="none" stroke="%23c49a6c" stroke-width="1.5" opacity="0.2"/><circle cx="100" cy="100" r="30" fill="none" stroke="%233b8c9e" stroke-width="1" opacity="0.2"/><path d="M100,40 L110,70 L140,70 L115,90 L130,125 L100,105 L70,125 L85,90 L60,70 L90,70 L100,40 Z" fill="none" stroke="%23b8860b" stroke-width="1" opacity="0.15"/></svg>');
+            background-size: 150px 150px;
+            background-repeat: repeat;
+            opacity: 0.3;
+            z-index: 0;
         }
         
-        /* Левый вертикальный орнамент */
-        .ornament-left {
-            position: absolute;
-            top: 50px;
-            left: 0;
-            bottom: 50px;
-            width: 30px;
-            background: repeating-linear-gradient(180deg,
-                transparent,
-                transparent 15px,
-                #8b5a2b 15px,
-                #8b5a2b 17px,
-                transparent 17px,
-                transparent 32px,
-                #b22222 32px,
-                #b22222 34px,
-                transparent 34px,
-                transparent 49px,
-                #008080 49px,
-                #008080 51px,
-                transparent 51px,
-                transparent 66px
-            );
-            opacity: 0.5;
-        }
-        
-        /* Правый вертикальный орнамент */
-        .ornament-right {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            bottom: 50px;
-            width: 30px;
-            background: repeating-linear-gradient(180deg,
-                transparent,
-                transparent 15px,
-                #008080 15px,
-                #008080 17px,
-                transparent 17px,
-                transparent 32px,
-                #8b5a2b 32px,
-                #8b5a2b 34px,
-                transparent 34px,
-                transparent 49px,
-                #b22222 49px,
-                #b22222 51px,
-                transparent 51px,
-                transparent 66px
-            );
-            opacity: 0.5;
-        }
-        
-        /* Угловые орнаменты (кошкар муйиз) */
+        /* ===== УГЛОВЫЕ ОРНАМЕНТЫ (ҚОШҚАР МҮЙІЗ) ===== */
         .corner {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            z-index: 10;
+            width: 150px;
+            height: 150px;
+            z-index: 5;
+            filter: drop-shadow(0 5px 10px rgba(0, 100, 150, 0.3));
         }
         
         .corner-tl {
-            top: 10px;
-            left: 10px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            top: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><path d="M30,30 L50,10 L80,10 L100,30 L80,50 L100,70 L80,90 L50,90 L30,70 L50,50 L30,30 Z" fill="none" stroke="%234a7c8c" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M45,45 L60,25 L80,25 L95,45 L80,65 L95,85 L80,105 L60,105 L45,85 L60,65 L45,45 Z" fill="none" stroke="%23c49a6c" stroke-width="2.5" stroke-linejoin="round" opacity="0.7"/></svg>') no-repeat;
             background-size: contain;
         }
         
         .corner-tr {
-            top: 10px;
-            right: 10px;
+            top: 0;
+            right: 0;
             transform: rotate(90deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><path d="M30,30 L50,10 L80,10 L100,30 L80,50 L100,70 L80,90 L50,90 L30,70 L50,50 L30,30 Z" fill="none" stroke="%234a7c8c" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M45,45 L60,25 L80,25 L95,45 L80,65 L95,85 L80,105 L60,105 L45,85 L60,65 L45,45 Z" fill="none" stroke="%23c49a6c" stroke-width="2.5" stroke-linejoin="round" opacity="0.7"/></svg>') no-repeat;
             background-size: contain;
         }
         
         .corner-bl {
-            bottom: 10px;
-            left: 10px;
+            bottom: 0;
+            left: 0;
             transform: rotate(-90deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><path d="M30,30 L50,10 L80,10 L100,30 L80,50 L100,70 L80,90 L50,90 L30,70 L50,50 L30,30 Z" fill="none" stroke="%234a7c8c" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M45,45 L60,25 L80,25 L95,45 L80,65 L95,85 L80,105 L60,105 L45,85 L60,65 L45,45 Z" fill="none" stroke="%23c49a6c" stroke-width="2.5" stroke-linejoin="round" opacity="0.7"/></svg>') no-repeat;
             background-size: contain;
         }
         
         .corner-br {
-            bottom: 10px;
-            right: 10px;
+            bottom: 0;
+            right: 0;
             transform: rotate(180deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 L40,5 L60,20 L80,5 L95,20 L80,40 L95,60 L80,80 L60,95 L40,80 L20,95 L5,80 L20,60 L5,40 L20,20" stroke="%23b22222" fill="none" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M30,30 L45,20 L60,30 L75,20 L85,30 L75,45 L85,60 L75,75 L60,85 L45,75 L30,85 L20,75 L30,60 L20,45 L30,30" stroke="%23008080" fill="none" stroke-width="2" stroke-linejoin="round" opacity="0.8"/></svg>') no-repeat;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150"><path d="M30,30 L50,10 L80,10 L100,30 L80,50 L100,70 L80,90 L50,90 L30,70 L50,50 L30,30 Z" fill="none" stroke="%234a7c8c" stroke-width="3" stroke-linejoin="round" opacity="0.8"/><path d="M45,45 L60,25 L80,25 L95,45 L80,65 L95,85 L80,105 L60,105 L45,85 L60,65 L45,45 Z" fill="none" stroke="%23c49a6c" stroke-width="2.5" stroke-linejoin="round" opacity="0.7"/></svg>') no-repeat;
             background-size: contain;
         }
         
-        /* Текстура войлока (фон) */
-        .felt-texture {
+        /* ===== БОРДЮРЫ С ОРНАМЕНТАМИ ===== */
+        .border-top {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            background: radial-gradient(circle at 30% 30%, rgba(139, 90, 43, 0.05) 4px, transparent 4px),
-                        radial-gradient(circle at 70% 70%, rgba(0, 102, 102, 0.05) 4px, transparent 4px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 1;
+            top: 15px;
+            left: 60px;
+            right: 60px;
+            height: 30px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                transparent 10%,
+                #4a7c8c 10%,
+                #4a7c8c 12%,
+                transparent 12%,
+                transparent 25%,
+                #c49a6c 25%,
+                #c49a6c 27%,
+                transparent 27%,
+                transparent 40%,
+                #b8860b 40%,
+                #b8860b 42%,
+                transparent 42%,
+                transparent 55%,
+                #4a7c8c 55%,
+                #4a7c8c 57%,
+                transparent 57%,
+                transparent 70%,
+                #b8860b 70%,
+                #b8860b 72%,
+                transparent 72%,
+                transparent 85%,
+                #c49a6c 85%,
+                #c49a6c 87%,
+                transparent 87%,
+                transparent 100%
+            );
+            opacity: 0.5;
+            z-index: 6;
         }
         
+        .border-bottom {
+            position: absolute;
+            bottom: 15px;
+            left: 60px;
+            right: 60px;
+            height: 30px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                transparent 15%,
+                #c49a6c 15%,
+                #c49a6c 17%,
+                transparent 17%,
+                transparent 32%,
+                #4a7c8c 32%,
+                #4a7c8c 34%,
+                transparent 34%,
+                transparent 49%,
+                #b8860b 49%,
+                #b8860b 51%,
+                transparent 51%,
+                transparent 66%,
+                #4a7c8c 66%,
+                #4a7c8c 68%,
+                transparent 68%,
+                transparent 83%,
+                #c49a6c 83%,
+                #c49a6c 85%,
+                transparent 85%,
+                transparent 100%
+            );
+            opacity: 0.5;
+            z-index: 6;
+        }
+        
+        .border-left {
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            bottom: 60px;
+            width: 30px;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                transparent 10%,
+                #4a7c8c 10%,
+                #4a7c8c 12%,
+                transparent 12%,
+                transparent 25%,
+                #c49a6c 25%,
+                #c49a6c 27%,
+                transparent 27%,
+                transparent 40%,
+                #b8860b 40%,
+                #b8860b 42%,
+                transparent 42%,
+                transparent 55%,
+                #4a7c8c 55%,
+                #4a7c8c 57%,
+                transparent 57%,
+                transparent 70%,
+                #b8860b 70%,
+                #b8860b 72%,
+                transparent 72%,
+                transparent 85%,
+                #c49a6c 85%,
+                #c49a6c 87%,
+                transparent 87%,
+                transparent 100%
+            );
+            opacity: 0.5;
+            z-index: 6;
+        }
+        
+        .border-right {
+            position: absolute;
+            top: 60px;
+            right: 15px;
+            bottom: 60px;
+            width: 30px;
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                transparent 15%,
+                #c49a6c 15%,
+                #c49a6c 17%,
+                transparent 17%,
+                transparent 32%,
+                #4a7c8c 32%,
+                #4a7c8c 34%,
+                transparent 34%,
+                transparent 49%,
+                #b8860b 49%,
+                #b8860b 51%,
+                transparent 51%,
+                transparent 66%,
+                #4a7c8c 66%,
+                #4a7c8c 68%,
+                transparent 68%,
+                transparent 83%,
+                #c49a6c 83%,
+                #c49a6c 85%,
+                transparent 85%,
+                transparent 100%
+            );
+            opacity: 0.5;
+            z-index: 6;
+        }
+        
+        /* ===== ЦЕНТРАЛЬНЫЙ ШАҢЫРАҚ ===== */
+        .shanyrak {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            position: relative;
+            background: radial-gradient(circle, rgba(74, 124, 140, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 10;
+            filter: drop-shadow(0 10px 15px rgba(0, 150, 200, 0.5));
+        }
+        
+        .shanyrak-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border: 5px solid #b8860b;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ffd700;
+        }
+        
+        .shanyrak-circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 25px;
+            height: 25px;
+            background: #4a7c8c;
+            border-radius: 50%;
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 15px #7ec8e0;
+        }
+        
+        .shanyrak-spoke {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, #b8860b, #4a7c8c, #b8860b);
+            transform-origin: center;
+            border-radius: 3px;
+        }
+        
+        .shanyrak-spoke:nth-child(2) { transform: rotate(45deg); }
+        .shanyrak-spoke:nth-child(3) { transform: rotate(90deg); }
+        .shanyrak-spoke:nth-child(4) { transform: rotate(135deg); }
+        
+        /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
         .content {
             position: relative;
             z-index: 20;
             text-align: center;
         }
         
-        /* Шаңырақ (усиленный) */
-        .shanyrak {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 25px;
-            position: relative;
-            background: rgba(139, 90, 43, 0.1);
-            border-radius: 50%;
-            border: 4px solid #b22222;
-        }
-        
-        .shanyrak::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: #008080;
-            border-radius: 50%;
-            border: 3px solid #c49a6c;
-        }
-        
-        .shanyrak .spoke {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 3px;
-            height: 100%;
-            background: #b22222;
-            transform-origin: center;
-        }
-        
-        .shanyrak .spoke:nth-child(1) { transform: rotate(0deg); }
-        .shanyrak .spoke:nth-child(2) { transform: rotate(45deg); }
-        .shanyrak .spoke:nth-child(3) { transform: rotate(90deg); }
-        .shanyrak .spoke:nth-child(4) { transform: rotate(135deg); }
-        
-        /* Декоративные кисточки (шашақ) */
-        .tassel {
-            position: absolute;
-            width: 20px;
-            height: 30px;
-            background: #b22222;
-            border-radius: 10px 10px 0 0;
-            z-index: 25;
-        }
-        
-        .tassel::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 20px;
-            height: 15px;
-            background: repeating-linear-gradient(45deg, #008080, #008080 5px, #b22222 5px, #b22222 10px);
-            border-radius: 0 0 10px 10px;
-        }
-        
-        .tassel-left {
-            top: 30px;
-            left: -10px;
-            transform: rotate(10deg);
-        }
-        
-        .tassel-right {
-            top: 30px;
-            right: -10px;
-            transform: rotate(-10deg);
-        }
-        
         .event-type {
             font-size: 22px;
-            letter-spacing: 8px;
-            color: #8b5a2b;
+            letter-spacing: 10px;
+            background: linear-gradient(135deg, #4a7c8c, #2c5a6e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
             text-transform: uppercase;
             font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 5px rgba(0, 150, 200, 0.3);
         }
         
         .couple {
-            font-size: 58px;
+            font-size: 64px;
             font-weight: 700;
-            color: #b22222;
+            background: linear-gradient(145deg, #2c5a6e, #4a7c8c, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
             line-height: 1.2;
             font-family: 'Times New Roman', serif;
-            text-shadow: 2px 2px 0 #c49a6c;
+            text-shadow: 0 10px 20px rgba(0, 150, 200, 0.5);
         }
         
         .couple span {
             display: inline-block;
-            font-size: 42px;
-            color: #008080;
+            font-size: 48px;
+            background: linear-gradient(145deg, #b8860b, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 0 15px;
-            text-shadow: 2px 2px 0 #8b5a2b;
         }
         
         .kazakh-blessing {
-            font-size: 24px;
-            color: #8b5a2b;
-            font-style: italic;
+            font-size: 28px;
+            background: linear-gradient(135deg, #4a7c8c, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
-            background: rgba(0, 128, 128, 0.1);
-            display: inline-block;
-            padding: 8px 30px;
-            border-radius: 50px;
-            border: 2px dashed #b22222;
-        }
-        
-        .date-box {
-            background: #f0e4d5;
-            border: 4px double #b22222;
-            border-radius: 200px 200px 200px 200px;
-            padding: 20px 25px;
-            margin: 30px 0;
-            box-shadow: inset 0 0 20px rgba(139, 90, 43, 0.2);
+            font-style: italic;
             position: relative;
-            border-left: 4px solid #008080;
-            border-right: 4px solid #008080;
+            display: inline-block;
+            padding: 0 30px;
         }
         
-        .date-box::before, .date-box::after {
+        .kazakh-blessing::before,
+        .kazakh-blessing::after {
             content: '❈';
-            color: #b22222;
+            color: #b8860b;
             font-size: 24px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            text-shadow: 0 0 10px #ffd700;
         }
         
-        .date-box::before { left: 15px; }
-        .date-box::after { right: 15px; }
+        .kazakh-blessing::before { left: 0; }
+        .kazakh-blessing::after { right: 0; }
+        
+        .date-box {
+            background: linear-gradient(145deg, rgba(74, 124, 140, 0.1), rgba(184, 134, 11, 0.1));
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(74, 124, 140, 0.5);
+            border-radius: 100px;
+            padding: 25px 35px;
+            margin: 35px 0;
+            box-shadow: 
+                0 15px 30px rgba(0, 100, 150, 0.3),
+                inset 0 0 30px rgba(255, 215, 0, 0.2);
+        }
         
         .date {
-            font-size: 44px;
+            font-size: 48px;
             font-weight: 700;
-            color: #b22222;
+            background: linear-gradient(145deg, #2c5a6e, #4a7c8c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             line-height: 1.2;
         }
         
         .date small {
-            font-size: 22px;
-            color: #008080;
+            font-size: 24px;
+            background: linear-gradient(135deg, #b8860b, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: block;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
         }
         
         .venue {
-            font-size: 32px;
-            color: #8b5a2b;
-            margin: 15px 0 5px;
+            font-size: 36px;
             font-weight: 600;
+            color: #2c5a6e;
+            margin: 15px 0 5px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(184, 134, 11, 0.3);
         }
         
         .address {
-            font-size: 20px;
-            color: #008080;
+            font-size: 22px;
+            color: #4a7c8c;
             margin-bottom: 15px;
             font-style: italic;
-            background: rgba(139, 90, 43, 0.1);
-            padding: 5px 15px;
-            border-radius: 50px;
+            background: linear-gradient(90deg, transparent, rgba(74, 124, 140, 0.1), transparent);
+            padding: 8px 25px;
             display: inline-block;
+            border-radius: 50px;
         }
         
         .time {
-            font-size: 22px;
-            color: #b22222;
+            font-size: 24px;
+            color: #b8860b;
             margin: 25px 0;
-            padding: 15px 25px;
-            background: rgba(0, 128, 128, 0.1);
-            border-radius: 60px;
+            padding: 15px 30px;
+            background: linear-gradient(90deg, transparent, rgba(74, 124, 140, 0.2), transparent);
             display: inline-block;
             font-weight: 600;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .rsvp {
-            margin: 35px 0 25px;
-            padding: 20px;
-            background: linear-gradient(145deg, #fcf5e8, #f0e4d5);
+            margin: 40px 0 30px;
+            padding: 25px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(74, 124, 140, 0.2));
+            backdrop-filter: blur(10px);
             border-radius: 80px;
-            border: 3px solid #8b5a2b;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            box-shadow: 0 20px 30px rgba(0, 100, 150, 0.3);
         }
         
         .rsvp-label {
-            font-size: 16px;
-            letter-spacing: 4px;
-            color: #8b5a2b;
+            font-size: 18px;
+            letter-spacing: 6px;
+            background: linear-gradient(135deg, #4a7c8c, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 600;
@@ -408,103 +463,103 @@
         
         .contact-button {
             display: inline-block;
-            background: #b22222;
+            background: linear-gradient(145deg, #2c5a6e, #4a7c8c);
             color: white;
-            padding: 18px 45px;
+            padding: 20px 50px;
             border-radius: 60px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            border: 3px solid #008080;
+            border: 3px solid #b8860b;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 150, 200, 0.5);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .contact-button:hover {
-            background: #8b1a1a;
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(178, 34, 34, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px #ffd700;
+            background: linear-gradient(145deg, #1a4b6d, #2c5a6e);
         }
         
         .organizer {
             margin-top: 25px;
-            font-size: 20px;
-            color: #8b5a2b;
+            font-size: 22px;
+            color: #2c5a6e;
+            font-weight: 500;
         }
         
         .organizer a {
-            color: #008080;
+            background: linear-gradient(135deg, #b8860b, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
-            border-bottom: 2px dotted #b22222;
+            border-bottom: 2px dotted #4a7c8c;
             font-weight: 600;
         }
         
         .footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 3px solid #b22222;
-            font-size: 16px;
-            color: #8b5a2b;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(74, 124, 140, 0.3);
+            font-size: 18px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
+            color: #4a7c8c;
+            font-weight: 500;
             letter-spacing: 2px;
         }
         
         .footer span {
-            color: #008080;
+            color: #b8860b;
             font-weight: 600;
         }
         
-        @media (max-width: 480px) {
-            .card { padding: 40px 20px; }
-            .couple { font-size: 42px; }
-            .couple span { font-size: 32px; }
-            .date { font-size: 32px; }
-            .date small { font-size: 18px; }
-            .venue { font-size: 24px; }
-            .time { font-size: 18px; }
+        @media (max-width: 600px) {
+            .card { padding: 40px 25px; }
+            .couple { font-size: 48px; }
+            .couple span { font-size: 36px; }
+            .date { font-size: 36px; }
+            .date small { font-size: 20px; }
+            .venue { font-size: 28px; }
+            .time { font-size: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Все орнаменты -->
-        <div class="ornament-top"></div>
-        <div class="ornament-bottom"></div>
-        <div class="ornament-left"></div>
-        <div class="ornament-right"></div>
-        
+        <!-- Декоративные элементы -->
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
         <div class="corner corner-br"></div>
         
-        <div class="felt-texture"></div>
-        
-        <!-- Декоративные кисточки -->
-        <div class="tassel tassel-left"></div>
-        <div class="tassel tassel-right"></div>
+        <div class="border-top"></div>
+        <div class="border-bottom"></div>
+        <div class="border-left"></div>
+        <div class="border-right"></div>
         
         <div class="content">
             <!-- Шаңырақ -->
             <div class="shanyrak">
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
-                <div class="spoke"></div>
+                <div class="shanyrak-circle"></div>
+                <div class="shanyrak-spoke"></div>
+                <div class="shanyrak-spoke"></div>
+                <div class="shanyrak-spoke"></div>
+                <div class="shanyrak-spoke"></div>
             </div>
             
-            <!-- Тип мероприятия на казахском -->
+            <!-- Тип мероприятия -->
             <div class="event-type">ҰЛТТЫҚ ТОЙ</div>
             
-            <!-- Имена (национальные) -->
+            <!-- Имена -->
             <h1 class="couple">
                 ЕРБОЛ <span>&</span> АЙГҮЛ
             </h1>
             
             <!-- Благословение -->
-            <div class="kazakh-blessing">Құтты болсын! •  Береке болсын!</div>
+            <div class="kazakh-blessing">Құтты болсын! • Береке болсын!</div>
             
             <!-- Дата -->
             <div class="date-box">
@@ -514,16 +569,16 @@
                 </div>
             </div>
             
-            <!-- Место проведения (с казахским названием) -->
+            <!-- Место -->
             <div class="venue">«АЛТЫН ОРДА»</div>
             <div class="address">Алматы облысы, Қарасай ауданы</div>
             
-            <!-- Время (на казахском) -->
+            <!-- Время -->
             <div class="time">
                 Қонақтарды жинау • 17:00
             </div>
             
-            <!-- RSVP с WhatsApp организатора -->
+            <!-- RSVP -->
             <div class="rsvp">
                 <div class="rsvp-label">ҚАТЫСУЫҢЫЗДЫ РАСТАҢЫЗ</div>
                 <a href="https://wa.me/77771234567?text=Құрметті%20ЕРБОЛ%20және%20АЙГҮЛ!%20Мен%20тойға%20қатысамын" target="_blank" class="contact-button">
@@ -531,12 +586,12 @@
                 </a>
             </div>
             
-            <!-- Контакты организатора -->
+            <!-- Организатор -->
             <div class="organizer">
                 Ұйымдастырушы: <a href="tel:+77771234567">Айгүл, +7 (777) 123-45-67</a>
             </div>
             
-            <!-- Футер с казахскими элементами -->
+            <!-- Футер -->
             <div class="footer">
                 <span>АЛМАТЫ</span> • 2026 • <span>БЕРЕКЕ</span>
             </div>
