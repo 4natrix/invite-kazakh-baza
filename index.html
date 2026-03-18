@@ -2,434 +2,118 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Qazaq Style | Базовое приглашение</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qazaq Style | Приглашение</title>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             min-height: 100vh;
             background: linear-gradient(145deg, #0a2e38 0%, #1c4b58 50%, #0d3742 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+            font-family: 'Cormorant Garamond', serif;
+            color: #fff;
             position: relative;
+            overflow: hidden;
         }
-        
-        /* Мягкое свечение (көк тәңірі) */
+
+        /* 🔥 Легкий орнамент по всему фону */
         body::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
-                        radial-gradient(circle at 70% 60%, rgba(0, 150, 170, 0.12) 0%, transparent 45%);
+            inset: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.08;
+        }
+
+        /* 🔥 Орнаменты по углам */
+        body::after {
+            content: "";
+            position: absolute;
+            inset: 0;
             pointer-events: none;
-        }
-        
-        .card {
-            max-width: 700px;
-            width: 100%;
-            background: #fcf8f0;
-            border-radius: 90px 90px 90px 90px;
-            padding: 60px 50px;
-            box-shadow: 
-                0 40px 70px -15px rgba(0, 0, 0, 0.7),
-                0 0 0 4px #a67c52,
-                0 0 0 10px #e3d6bf,
-                inset 0 0 40px rgba(166, 124, 82, 0.2);
-            position: relative;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(166, 124, 82, 0.08) 0%, transparent 30%),
-                radial-gradient(circle at 85% 80%, rgba(0, 100, 120, 0.08) 0%, transparent 30%);
-        }
-        
-        /* ===== ОРНАМЕНТЫ ===== */
-        
-        /* Верхний бордюр */
-        .ornament-top {
-            position: absolute;
-            top: 15px;
-            left: 35px;
-            right: 35px;
-            height: 45px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 45" preserveAspectRatio="xMidYMid slice"><path d="M30,22 L50,5 L70,22 L90,5 L110,22 L130,5 L150,22 L170,5 L190,22 L210,5 L230,22 L250,5 L270,22" stroke="%238b5a2b" fill="none" stroke-width="3" opacity="0.7"/><path d="M40,30 L60,15 L80,30 L100,15 L120,30 L140,15 L160,30 L180,15 L200,30 L220,15 L240,30 L260,15" stroke="%23006688" fill="none" stroke-width="2.5" opacity="0.6"/><circle cx="50" cy="18" r="3" fill="%23b8860b" opacity="0.5"/><circle cx="150" cy="18" r="3" fill="%23b8860b" opacity="0.5"/><circle cx="250" cy="18" r="3" fill="%23b8860b" opacity="0.5"/></svg>') repeat-x;
-            background-size: 300px 45px;
-            z-index: 5;
-        }
-        
-        /* Нижний бордюр */
-        .ornament-bottom {
-            position: absolute;
-            bottom: 15px;
-            left: 35px;
-            right: 35px;
-            height: 45px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 45" preserveAspectRatio="xMidYMid slice"><path d="M30,23 L50,40 L70,23 L90,40 L110,23 L130,40 L150,23 L170,40 L190,23 L210,40 L230,23 L250,40 L270,23" stroke="%23006688" fill="none" stroke-width="3" opacity="0.7"/><path d="M40,15 L60,30 L80,15 L100,30 L120,15 L140,30 L160,15 L180,30 L200,15 L220,30 L240,15 L260,30" stroke="%238b5a2b" fill="none" stroke-width="2.5" opacity="0.6"/><circle cx="90" cy="28" r="3" fill="%23b8860b" opacity="0.5"/><circle cx="190" cy="28" r="3" fill="%23b8860b" opacity="0.5"/></svg>') repeat-x;
-            background-size: 300px 45px;
-            z-index: 5;
-        }
-        
-        /* Угловые орнаменты - ҚОШҚАР МҮЙІЗ */
-        .corner {
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            z-index: 10;
-            filter: drop-shadow(0 5px 10px rgba(139, 69, 19, 0.3));
-        }
-        
-        .corner-tl {
-            top: -5px;
-            left: -5px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><path d="M35,35 L52,12 L78,12 L95,35 L78,58 L95,81 L78,104 L52,104 L35,81 L52,58 L35,35Z" fill="none" stroke="%238b5a2b" stroke-width="3" opacity="0.9"/><path d="M48,48 L63,30 L82,30 L97,48 L82,66 L97,84 L82,102 L63,102 L48,84 L63,66 L48,48Z" fill="none" stroke="%23006688" stroke-width="2.5" opacity="0.8"/><circle cx="65" cy="57" r="6" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
-            background-size: contain;
-        }
-        
-        .corner-tr {
-            top: -5px;
-            right: -5px;
-            transform: rotate(90deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><path d="M35,35 L52,12 L78,12 L95,35 L78,58 L95,81 L78,104 L52,104 L35,81 L52,58 L35,35Z" fill="none" stroke="%238b5a2b" stroke-width="3" opacity="0.9"/><path d="M48,48 L63,30 L82,30 L97,48 L82,66 L97,84 L82,102 L63,102 L48,84 L63,66 L48,48Z" fill="none" stroke="%23006688" stroke-width="2.5" opacity="0.8"/><circle cx="65" cy="57" r="6" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
-            background-size: contain;
-        }
-        
-        .corner-bl {
-            bottom: -5px;
-            left: -5px;
-            transform: rotate(-90deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><path d="M35,35 L52,12 L78,12 L95,35 L78,58 L95,81 L78,104 L52,104 L35,81 L52,58 L35,35Z" fill="none" stroke="%238b5a2b" stroke-width="3" opacity="0.9"/><path d="M48,48 L63,30 L82,30 L97,48 L82,66 L97,84 L82,102 L63,102 L48,84 L63,66 L48,48Z" fill="none" stroke="%23006688" stroke-width="2.5" opacity="0.8"/><circle cx="65" cy="57" r="6" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
-            background-size: contain;
-        }
-        
-        .corner-br {
-            bottom: -5px;
-            right: -5px;
-            transform: rotate(180deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130"><path d="M35,35 L52,12 L78,12 L95,35 L78,58 L95,81 L78,104 L52,104 L35,81 L52,58 L35,35Z" fill="none" stroke="%238b5a2b" stroke-width="3" opacity="0.9"/><path d="M48,48 L63,30 L82,30 L97,48 L82,66 L97,84 L82,102 L63,102 L48,84 L63,66 L48,48Z" fill="none" stroke="%23006688" stroke-width="2.5" opacity="0.8"/><circle cx="65" cy="57" r="6" fill="%23b8860b" opacity="0.6"/></svg>') no-repeat;
-            background-size: contain;
-        }
-        
-        /* Орнаменты по бокам - ТҰМАР */
-        .tumar {
-            position: absolute;
-            width: 50px;
-            height: 100px;
-            z-index: 6;
+                url('https://i.imgur.com/8QfZ6Yv.png'),
+                url('https://i.imgur.com/8QfZ6Yv.png'),
+                url('https://i.imgur.com/8QfZ6Yv.png'),
+                url('https://i.imgur.com/8QfZ6Yv.png');
+            background-repeat: no-repeat;
+            background-size: 140px;
+            background-position: 
+                top 10px left 10px,
+                top 10px right 10px,
+                bottom 10px left 10px,
+                bottom 10px right 10px;
             opacity: 0.6;
         }
-        
-        .tumar-left {
-            left: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100"><path d="M25,15 L40,25 L40,45 L25,60 L10,45 L10,25 Z" fill="none" stroke="%238b5a2b" stroke-width="2"/><circle cx="25" cy="32" r="4" fill="%23b8860b" opacity="0.5"/><path d="M25,45 L35,55 L35,75 L25,85 L15,75 L15,55 Z" fill="none" stroke="%23006688" stroke-width="2"/><circle cx="25" cy="64" r="4" fill="%23b8860b" opacity="0.5"/></svg>') repeat-y;
-            background-size: 50px 100px;
-        }
-        
-        .tumar-right {
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%) rotate(180deg);
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100"><path d="M25,15 L40,25 L40,45 L25,60 L10,45 L10,25 Z" fill="none" stroke="%238b5a2b" stroke-width="2"/><circle cx="25" cy="32" r="4" fill="%23b8860b" opacity="0.5"/><path d="M25,45 L35,55 L35,75 L25,85 L15,75 L15,55 Z" fill="none" stroke="%23006688" stroke-width="2"/><circle cx="25" cy="64" r="4" fill="%23b8860b" opacity="0.5"/></svg>') repeat-y;
-            background-size: 50px 100px;
-        }
-        
-        /* Шаңырақ */
-        .shanyrak {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
+
+        .card {
             position: relative;
-            z-index: 15;
-            filter: drop-shadow(0 10px 15px rgba(0, 80, 100, 0.4));
-        }
-        
-        .shanyrak-outer {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            border: 5px solid #b8860b;
-            border-radius: 50%;
-            box-shadow: inset 0 0 15px #a67c52;
-        }
-        
-        .shanyrak-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: #006688;
-            border-radius: 50%;
-            border: 3px solid #b8860b;
-            box-shadow: 0 0 15px #b8860b;
-        }
-        
-        .shanyrak-spoke {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #b8860b, #006688, #b8860b);
-            transform-origin: center;
-            border-radius: 2px;
-        }
-        
-        .shanyrak-spoke:nth-child(2) { transform: rotate(45deg); }
-        .shanyrak-spoke:nth-child(3) { transform: rotate(90deg); }
-        .shanyrak-spoke:nth-child(4) { transform: rotate(135deg); }
-        
-        /* Контент */
-        .content {
-            position: relative;
-            z-index: 20;
+            z-index: 2;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
             text-align: center;
-            padding: 10px 0;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        
-        .event-type {
-            font-size: 20px;
-            letter-spacing: 8px;
-            color: #8b5a2b;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-        
-        .couple {
-            font-size: 64px;
-            font-weight: 600;
-            color: #0a2e38;
-            margin-bottom: 10px;
-            line-height: 1.2;
-            text-shadow: 2px 2px 0 #e3d6bf;
-        }
-        
-        .couple span {
-            display: inline-block;
-            font-size: 46px;
-            color: #b8860b;
-            margin: 0 15px;
-        }
-        
-        .blessing {
+
+        .title {
             font-size: 28px;
-            color: #006688;
-            font-style: italic;
-            margin-bottom: 25px;
-            padding: 10px 0;
-            border-top: 2px solid #b8860b;
-            border-bottom: 2px solid #b8860b;
-            display: inline-block;
+            margin-bottom: 15px;
         }
-        
-        .date-box {
-            background: rgba(166, 124, 82, 0.1);
-            border: 3px double #8b5a2b;
-            border-radius: 200px;
-            padding: 22px 35px;
-            margin: 30px 0;
-            box-shadow: inset 0 0 30px rgba(184, 134, 11, 0.15);
-        }
-        
-        .date {
-            font-size: 48px;
-            font-weight: 600;
-            color: #0a2e38;
-            line-height: 1.2;
-        }
-        
-        .date small {
-            font-size: 22px;
-            color: #006688;
-            display: block;
-            letter-spacing: 4px;
-        }
-        
-        .venue {
+
+        .names {
             font-size: 36px;
-            color: #8b5a2b;
-            margin: 15px 0 5px;
-            font-weight: 500;
-        }
-        
-        .address {
-            font-size: 20px;
-            color: #0a2e38;
+            font-weight: bold;
             margin-bottom: 20px;
-            font-style: italic;
-            background: rgba(0, 102, 136, 0.08);
-            padding: 8px 25px;
+        }
+
+        .info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            margin-top: 20px;
             display: inline-block;
-            border-radius: 50px;
-        }
-        
-        .time {
-            font-size: 22px;
-            color: #006688;
-            margin: 20px 0;
-            padding: 12px 30px;
-            background: rgba(184, 134, 11, 0.1);
-            display: inline-block;
-            border-radius: 50px;
-            font-weight: 500;
-        }
-        
-        .rsvp {
-            margin: 40px 0 30px;
-            padding: 25px;
-            background: linear-gradient(145deg, #0a2e38, #06303a);
-            border-radius: 100px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .rsvp-label {
-            font-size: 16px;
-            letter-spacing: 5px;
-            color: #b8860b;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .contact-button {
-            display: inline-block;
-            background: #b8860b;
-            color: #0a2e38;
-            padding: 18px 50px;
-            border-radius: 60px;
+            padding: 12px 25px;
+            background: #ffffff;
+            color: #0d3742;
             text-decoration: none;
-            font-size: 20px;
-            font-weight: 600;
-            border: 3px solid #e3d6bf;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
+            border-radius: 30px;
+            font-weight: bold;
         }
-        
-        .contact-button:hover {
-            background: #e5b73b;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px #b8860b;
+
+        .button:hover {
+            background: #ddd;
         }
-        
-        .organizer {
-            margin-top: 25px;
-            font-size: 20px;
-            color: #0a2e38;
-        }
-        
-        .organizer a {
-            color: #006688;
-            text-decoration: none;
-            border-bottom: 2px dotted #b8860b;
-            font-weight: 600;
-            padding-bottom: 2px;
-        }
-        
-        .footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 3px solid #8b5a2b;
-            font-size: 16px;
-            color: #a67c52;
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            letter-spacing: 2px;
-        }
-        
-        .footer span {
-            color: #006688;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 550px) {
-            .card { padding: 40px 25px; }
-            .couple { font-size: 44px; }
-            .couple span { font-size: 32px; }
-            .date { font-size: 36px; }
-            .date small { font-size: 18px; }
-            .venue { font-size: 28px; }
-            .blessing { font-size: 22px; }
-            .tumar-left, .tumar-right { opacity: 0.3; }
-        }
+
     </style>
 </head>
+
 <body>
+
     <div class="card">
-        <!-- Все орнаменты -->
-        <div class="ornament-top"></div>
-        <div class="ornament-bottom"></div>
-        
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        
-        <div class="tumar tumar-left"></div>
-        <div class="tumar tumar-right"></div>
-        
-        <div class="content">
-            <!-- Шаңырақ -->
-            <div class="shanyrak">
-                <div class="shanyrak-outer"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-inner"></div>
-            </div>
-            
-            <div class="event-type">ҚАЗАҚ ТОЙ</div>
-            
-            <h1 class="couple">
-                АЛМАС <span>&</span> ЖАНАР
-            </h1>
-            
-            <div class="blessing">Шаңырағыңыз биік болсын</div>
-            
-            <div class="date-box">
-                <div class="date">
-                    15 АВГУСТА 2026
-                    <small>СЕНБІ • 18:00</small>
-                </div>
-            </div>
-            
-            <div class="venue">«АЛТЫН ҰЯ»</div>
-            <div class="address">Алматинская область, Карасайский район</div>
-            
-            <div class="time">
-                Сбор гостей • 17:00
-            </div>
-            
-            <div class="rsvp">
-                <div class="rsvp-label">ПОДТВЕРЖДЕНИЕ</div>
-                <a href="https://wa.me/77771234567?text=Құрметті%20АЛМАС%20және%20ЖАНАР!%20Мен%20тойға%20қатысамын" target="_blank" class="contact-button">
-                    WhatsApp
-                </a>
-            </div>
-            
-            <div class="organizer">
-                Организатор: <a href="tel:+77771234567">Айгүл, +7 (777) 123-45-67</a>
-            </div>
-            
-            <div class="footer">
-                <span>АЛМАТЫ</span> • 2026 • <span>БЕРЕКЕ</span>
-            </div>
-        </div>
+        <div class="title">Свадебное приглашение</div>
+
+        <div class="names">Айбек & Айгерим</div>
+
+        <div class="info">📅 25 июля 2026</div>
+        <div class="info">📍 Ресторан "Астана"</div>
+        <div class="info">⏰ 18:00</div>
+
+        <a href="tel:+77000000000" class="button">Позвонить</a>
     </div>
+
 </body>
 </html>
