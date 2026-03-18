@@ -1,306 +1,364 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
-  <title>Айбек & Айгерим | Свадебное приглашение</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Marck+Script&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 16px;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-family: 'Inter', sans-serif;
-      color: #f6ead1;
-      background:
-        linear-gradient(rgba(7, 34, 49, 0.82), rgba(7, 34, 49, 0.88)),
-        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat fixed;
-      overflow-x: hidden;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 720px;
-      background:
-        linear-gradient(180deg, rgba(11, 53, 73, 0.94), rgba(8, 38, 53, 0.96));
-      border: 1px solid rgba(212, 177, 97, 0.45);
-      border-radius: 30px;
-      padding: 50px 34px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before,
-    .card::after {
-      content: '';
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      opacity: 0.16;
-      background-repeat: no-repeat;
-      background-size: contain;
-      pointer-events: none;
-    }
-
-    .card::before {
-      top: 12px;
-      left: 12px;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
-    }
-
-    .card::after {
-      right: 12px;
-      bottom: 12px;
-      transform: rotate(180deg);
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23d4b161' d='M50 6c8 10 15 13 25 13-6 5-9 10-9 17 0 7 3 12 9 17-10 0-17 4-25 13-8-9-15-13-25-13 6-5 9-10 9-17 0-7-3-12-9-17 10 0 17-3 25-13zm0 20c-6 6-11 9-18 10 5 4 7 8 7 14s-2 10-7 14c7 1 12 4 18 10 6-6 11-9 18-10-5-4-7-8-7-14s2-10 7-14c-7-1-12-4-18-10z'/></svg>");
-    }
-
-    .label {
-      font-size: 0.78rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: #d9ba74;
-      margin-bottom: 18px;
-      font-weight: 500;
-    }
-
-    .ornament-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 24px;
-      color: #d4b161;
-    }
-
-    .ornament-line::before,
-    .ornament-line::after {
-      content: '';
-      width: 70px;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #d4b161, transparent);
-    }
-
-    .ornament-line i {
-      font-size: 1.1rem;
-    }
-
-    .names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.8rem;
-      line-height: 1.05;
-      font-weight: 700;
-      color: #fff7e8;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    .amp {
-      display: block;
-      font-family: 'Marck Script', cursive;
-      font-size: 2.5rem;
-      color: #d8bb79;
-      font-weight: 400;
-      margin: 4px 0;
-    }
-
-    .subtitle {
-      font-family: 'Marck Script', cursive;
-      font-size: 2rem;
-      color: #f0dba9;
-      margin-bottom: 22px;
-    }
-
-    .date {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.95rem;
-      color: #d7b66a;
-      margin-bottom: 26px;
-      letter-spacing: 2px;
-    }
-
-    .info-box {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(212, 177, 97, 0.28);
-      border-radius: 22px;
-      padding: 24px 18px;
-      margin-bottom: 24px;
-    }
-
-    .venue {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff3d5;
-      margin-bottom: 8px;
-    }
-
-    .address,
-    .time,
-    .contact-person {
-      color: #d8d3c8;
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .time {
-      margin-top: 10px;
-      color: #d7b66a;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.84rem;
-      font-weight: 500;
-    }
-
-    .divider {
-      width: 76px;
-      height: 1px;
-      margin: 24px auto;
-      border: none;
-      background: linear-gradient(to right, transparent, #d4b161, transparent);
-    }
-
-    .quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      color: #f2e6c5;
-      font-style: italic;
-      margin-bottom: 18px;
-    }
-
-    .rsvp-text {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.25em;
-      color: #d7b66a;
-      margin-bottom: 20px;
-    }
-
-    .phone-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      max-width: 320px;
-      text-decoration: none;
-      border-radius: 999px;
-      padding: 15px 24px;
-      background: linear-gradient(135deg, #d5b166, #b88d3e);
-      color: #0b3549;
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-weight: 600;
-      box-shadow: 0 10px 24px rgba(212, 177, 97, 0.2);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .phone-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(212, 177, 97, 0.28);
-    }
-
-    .contact-person {
-      margin-top: 18px;
-    }
-
-    .footer-city {
-      margin-top: 24px;
-      color: #d7b66a;
-      font-size: 0.78rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 600px) {
-      .card {
-        padding: 38px 22px;
-      }
-
-      .names {
-        font-size: 2.9rem;
-      }
-
-      .amp {
-        font-size: 2.1rem;
-      }
-
-      .subtitle {
-        font-size: 1.7rem;
-      }
-
-      .date {
-        font-size: 1.55rem;
-      }
-
-      .venue {
-        font-size: 1.6rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      html { font-size: 14px; }
-      .names { font-size: 2.45rem; }
-      .subtitle { font-size: 1.45rem; }
-      .phone-btn { max-width: 100%; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Қазақ стилі | Базовое</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f5efe6;
+            background-image: 
+                linear-gradient(45deg, rgba(0, 128, 128, 0.03) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(0, 128, 128, 0.03) 25%, transparent 25%);
+            background-size: 60px 60px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+        }
+        
+        .card {
+            max-width: 600px;
+            width: 100%;
+            background: #fffaf2;
+            border-radius: 40px 40px 40px 40px;
+            padding: 40px 30px;
+            box-shadow: 0 30px 50px rgba(139, 69, 19, 0.15);
+            position: relative;
+            border: 2px solid #b68b6d;
+        }
+        
+        /* Орнамент сверху */
+        .ornament-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="100" height="30"><path d="M10,15 L20,5 L30,15 L40,5 L50,15 L60,5 L70,15 L80,5 L90,15" stroke="%23b22222" fill="none" stroke-width="2"/><path d="M10,25 L20,15 L30,25 L40,15 L50,25 L60,15 L70,25 L80,15 L90,25" stroke="%23008080" fill="none" stroke-width="2"/></svg>') repeat-x top;
+            opacity: 0.8;
+        }
+        
+        /* Орнамент снизу */
+        .ornament-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" width="100" height="30"><path d="M10,5 L20,15 L30,5 L40,15 L50,5 L60,15 L70,5 L80,15 L90,5" stroke="%23b22222" fill="none" stroke-width="2"/><path d="M10,15 L20,25 L30,15 L40,25 L50,15 L60,25 L70,15 L80,25 L90,15" stroke="%23008080" fill="none" stroke-width="2"/></svg>') repeat-x bottom;
+            opacity: 0.8;
+        }
+        
+        /* Угловые орнаменты */
+        .corner {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            opacity: 0.4;
+        }
+        
+        .corner-tl {
+            top: 10px;
+            left: 10px;
+            background: radial-gradient(circle at 0 0, transparent 50%, #b68b6d 100%);
+            border-top: 3px solid #b22222;
+            border-left: 3px solid #008080;
+        }
+        
+        .corner-tr {
+            top: 10px;
+            right: 10px;
+            background: radial-gradient(circle at 100% 0, transparent 50%, #b68b6d 100%);
+            border-top: 3px solid #b22222;
+            border-right: 3px solid #008080;
+        }
+        
+        .corner-bl {
+            bottom: 10px;
+            left: 10px;
+            background: radial-gradient(circle at 0 100%, transparent 50%, #b68b6d 100%);
+            border-bottom: 3px solid #b22222;
+            border-left: 3px solid #008080;
+        }
+        
+        .corner-br {
+            bottom: 10px;
+            right: 10px;
+            background: radial-gradient(circle at 100% 100%, transparent 50%, #b68b6d 100%);
+            border-bottom: 3px solid #b22222;
+            border-right: 3px solid #008080;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        /* Шаңырақ (символ) */
+        .shanyrak {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border: 3px solid #b68b6d;
+            border-radius: 50%;
+            position: relative;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .shanyrak::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #b22222;
+            border-radius: 50%;
+        }
+        
+        .shanyrak::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #b68b6d;
+        }
+        
+        .shanyrak span {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #b68b6d;
+            transform-origin: center;
+        }
+        
+        .shanyrak span:nth-child(1) { transform: rotate(45deg); }
+        .shanyrak span:nth-child(2) { transform: rotate(90deg); }
+        .shanyrak span:nth-child(3) { transform: rotate(135deg); }
+        
+        .event-type {
+            font-size: 18px;
+            letter-spacing: 4px;
+            color: #008080;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        
+        .couple {
+            font-size: 48px;
+            font-weight: 600;
+            color: #b22222;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        .couple span {
+            display: inline-block;
+            font-size: 32px;
+            color: #008080;
+            margin: 0 10px;
+        }
+        
+        .kazakh-word {
+            font-size: 16px;
+            color: #b68b6d;
+            font-style: italic;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .date-box {
+            background: linear-gradient(135deg, #fffaf2, #f0e4d5);
+            border: 2px solid #b68b6d;
+            border-radius: 100px;
+            padding: 15px 25px;
+            margin: 25px 0;
+            box-shadow: inset 0 0 15px rgba(182, 139, 109, 0.2);
+        }
+        
+        .date {
+            font-size: 36px;
+            font-weight: 600;
+            color: #b22222;
+            line-height: 1.2;
+        }
+        
+        .date small {
+            font-size: 18px;
+            color: #008080;
+            display: block;
+        }
+        
+        .venue {
+            font-size: 24px;
+            color: #b68b6d;
+            margin: 15px 0 5px;
+            font-weight: 500;
+        }
+        
+        .address {
+            font-size: 18px;
+            color: #008080;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .time {
+            font-size: 20px;
+            color: #b22222;
+            margin: 20px 0;
+            padding: 10px;
+            border-top: 2px solid #008080;
+            border-bottom: 2px solid #008080;
+            display: inline-block;
+        }
+        
+        .rsvp {
+            margin: 30px 0 20px;
+            padding: 20px;
+            background: rgba(0, 128, 128, 0.05);
+            border-radius: 30px;
+        }
+        
+        .rsvp-label {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #b68b6d;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .contact-button {
+            display: inline-block;
+            background: #b22222;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            border: 2px solid #008080;
+            transition: all 0.3s;
+        }
+        
+        .contact-button:hover {
+            background: #8b1a1a;
+            transform: scale(1.02);
+        }
+        
+        .organizer {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #b68b6d;
+        }
+        
+        .organizer a {
+            color: #008080;
+            text-decoration: none;
+            border-bottom: 1px dashed #008080;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #b68b6d;
+            font-size: 14px;
+            color: #b68b6d;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .footer span {
+            color: #b22222;
+        }
+        
+        @media (max-width: 480px) {
+            .card { padding: 30px 20px; }
+            .couple { font-size: 36px; }
+            .date { font-size: 28px; }
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <div class="label">Үйлену тойына шақыру</div>
-
-    <div class="ornament-line">
-      <i class="fa-solid fa-diamond"></i>
+    <div class="card">
+        <!-- Орнаменты -->
+        <div class="ornament-top"></div>
+        <div class="ornament-bottom"></div>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        
+        <div class="content">
+            <!-- Шаңырақ -->
+            <div class="shanyrak">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Тип мероприятия -->
+            <div class="event-type">ҰЛТТЫҚ ТОЙ</div>
+            
+            <!-- Имена -->
+            <h1 class="couple">
+                ЕРБОЛ <span>&</span> АЙГҮЛ
+            </h1>
+            
+            <div class="kazakh-word">Құтты болсын!</div>
+            
+            <!-- Дата -->
+            <div class="date-box">
+                <div class="date">
+                    15 ТАМЫЗ 2026
+                    <small>сәбі</small>
+                </div>
+            </div>
+            
+            <!-- Место -->
+            <div class="venue">«АЛТЫН ОРДА»</div>
+            <div class="address">Алматы облысы, Қарасай ауданы</div>
+            
+            <!-- Время -->
+            <div class="time">
+                Қонақтарды жинау 17:00 • Рәсім 18:00
+            </div>
+            
+            <!-- RSVP -->
+            <div class="rsvp">
+                <div class="rsvp-label">ҚАТЫСУЫҢЫЗДЫ РАСТАҢЫЗ</div>
+                <a href="https://wa.me/77771234567?text=Құрметті%20ЕРБОЛ%20және%20АЙГҮЛ!%20Мен%20тойға%20қатысамын" target="_blank" class="contact-button">
+                    Ұйымдастырушы
+                </a>
+            </div>
+            
+            <!-- Организатор -->
+            <div class="organizer">
+                Ұйымдастырушы: <a href="tel:+77771234567">Айгүл, +7 (777) 123-45-67</a>
+            </div>
+            
+            <!-- Футер -->
+            <div class="footer">
+                <span>АЛМАТЫ</span> • 2026
+            </div>
+        </div>
     </div>
-
-    <h1 class="names">
-      Айбек
-      <span class="amp">&</span>
-      Айгерим
-    </h1>
-
-    <div class="subtitle">Қуанышымызға ортақ болыңыздар</div>
-    <div class="date">26 маусым 2026</div>
-
-    <div class="info-box">
-      <div class="venue">Ресторан «Дәстүрлік»</div>
-      <div class="address">Астана қ., Тәуелсіздік даңғылы, 15</div>
-      <div class="time">Басталуы 18:00</div>
-    </div>
-
-    <hr class="divider">
-
-    <div class="quote">«Бұл қуанышты күнді сіздермен бірге өткізгіміз келеді»</div>
-
-    <div class="rsvp-text">Қатысатыныңызды растаңыз</div>
-
-    <a href="tel:+77771234567" class="phone-btn">
-      <i class="fas fa-phone-alt"></i>
-      Қоңырау шалу
-    </a>
-
-    <div class="contact-person">Айгүл, ұйымдастырушы: +7 (777) 123-45-67</div>
-    <div class="footer-city">Астана • 2026</div>
-  </div>
 </body>
 </html>
