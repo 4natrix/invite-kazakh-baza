@@ -1,359 +1,451 @@
 <!DOCTYPE html>
-<html lang="kk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Қазақ тойы | Алмас & Жанар</title>
+    <title>Қазақ стилі | Базовое приглашение</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap');
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #0a2f35 0%, #1e4d57 40%, #0f3a44 100%);
+            background: linear-gradient(145deg, #0e3b45 0%, #1e5568 50%, #124a5a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
-            font-family: 'Roboto', sans-serif;
+            padding: 20px;
+            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
             position: relative;
-            overflow: hidden;
         }
-
+        
+        /* Мягкое свечение */
         body::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at 25% 20%, rgba(255, 215, 0, 0.18) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(255, 240, 180, 0.15) 0%, transparent 60%),
-                radial-gradient(2px 2px at 40px 80px, #ffdd88, transparent),
-                radial-gradient(3px 3px at 180px 120px, #fff8d6, transparent),
-                radial-gradient(2px 2px at 300px 200px, #ffd700, transparent);
-            background-size: 350px 350px;
-            opacity: 0.65;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 70% 60%, rgba(100, 180, 200, 0.12) 0%, transparent 45%);
             pointer-events: none;
         }
-
+        
         .card {
-            max-width: 740px;
+            max-width: 680px;
             width: 100%;
-            background: #fdf8ed;
-            border-radius: 45px;
-            padding: 60px 48px 70px;
+            background: #fcf8f0;
+            border-radius: 70px 70px 70px 70px;
+            padding: 60px 50px;
             box-shadow: 
-                0 45px 100px -15px rgba(0, 0, 0, 0.8),
-                0 0 0 10px #c9a36b,
-                0 0 0 18px #e8d9c4,
-                inset 0 0 70px rgba(184, 134, 11, 0.2);
+                0 40px 70px -15px rgba(0, 0, 0, 0.7),
+                0 0 0 4px #a67c52,
+                0 0 0 10px #e8d9c4;
             position: relative;
-            border: 4px solid #b8860b;
             overflow: hidden;
         }
-
-        /* ==================== УСИЛЕННЫЕ КАЗАХСКИЕ ОРНАМЕНТЫ ==================== */
-
-        /* Богатый басқұр сверху и снизу */
-        .ornament-top, .ornament-bottom {
+        
+        /* ===== ЛИНИИ В КАЗАХСКОМ СТИЛЕ ===== */
+        
+        /* Верхняя группа линий */
+        .lines-top {
             position: absolute;
-            left: 30px; right: 30px;
-            height: 55px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="420" height="55" viewBox="0 0 420 55"><path d="M20 28 Q50 10 80 28 Q110 10 140 28 Q170 10 200 28 Q230 10 260 28 Q290 10 320 28 Q350 10 380 28 Q410 10 420 28" fill="none" stroke="%238b5a2b" stroke-width="5" stroke-linecap="round"/><path d="M30 38 Q60 20 90 38 Q120 20 150 38 Q180 20 210 38 Q240 20 270 38 Q300 20 330 38 Q360 20 390 38" fill="none" stroke="%23006688" stroke-width="3.5" opacity="0.9"/><circle cx="80" cy="18" r="6" fill="%23b8860b"/><circle cx="200" cy="18" r="6" fill="%23b8860b"/><circle cx="320" cy="18" r="6" fill="%23b8860b"/><path d="M40 45 L55 32 L70 45 L85 32 L100 45" fill="none" stroke="%23b8860b" stroke-width="2.5" opacity="0.7"/></svg>') repeat-x;
-            background-size: 420px 55px;
-            z-index: 5;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(
+                90deg,
+                #b8860b 0%, #b8860b 5px,
+                transparent 5px, transparent 15px,
+                #006688 15px, #006688 20px,
+                transparent 20px, transparent 30px,
+                #8b5a2b 30px, #8b5a2b 35px,
+                transparent 35px, transparent 45px,
+                #b8860b 45px, #b8860b 50px,
+                transparent 50px, transparent 60px,
+                #006688 60px, #006688 65px,
+                transparent 65px, transparent 75px
+            );
+            background-size: 75px 30px;
+            opacity: 0.5;
         }
-        .ornament-top { top: 20px; }
-        .ornament-bottom { bottom: 20px; transform: rotate(180deg); }
-
-        /* Қошқар мүйіз — угловые элементы (более сложные) */
+        
+        /* Нижняя группа линий */
+        .lines-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(
+                90deg,
+                #006688 0%, #006688 5px,
+                transparent 5px, transparent 15px,
+                #8b5a2b 15px, #8b5a2b 20px,
+                transparent 20px, transparent 30px,
+                #b8860b 30px, #b8860b 35px,
+                transparent 35px, transparent 45px,
+                #006688 45px, #006688 50px,
+                transparent 50px, transparent 60px,
+                #8b5a2b 60px, #8b5a2b 65px,
+                transparent 65px, transparent 75px
+            );
+            background-size: 75px 30px;
+            opacity: 0.5;
+        }
+        
+        /* Левая группа линий */
+        .lines-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 25px;
+            background: linear-gradient(
+                180deg,
+                #b8860b 0%, #b8860b 5px,
+                transparent 5px, transparent 15px,
+                #006688 15px, #006688 20px,
+                transparent 20px, transparent 30px,
+                #8b5a2b 30px, #8b5a2b 35px,
+                transparent 35px, transparent 45px,
+                #b8860b 45px, #b8860b 50px,
+                transparent 50px, transparent 60px,
+                #006688 60px, #006688 65px,
+                transparent 65px, transparent 75px
+            );
+            background-size: 25px 75px;
+            opacity: 0.5;
+        }
+        
+        /* Правая группа линий */
+        .lines-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 25px;
+            background: linear-gradient(
+                180deg,
+                #006688 0%, #006688 5px,
+                transparent 5px, transparent 15px,
+                #8b5a2b 15px, #8b5a2b 20px,
+                transparent 20px, transparent 30px,
+                #b8860b 30px, #b8860b 35px,
+                transparent 35px, transparent 45px,
+                #006688 45px, #006688 50px,
+                transparent 50px, transparent 60px,
+                #8b5a2b 60px, #8b5a2b 65px,
+                transparent 65px, transparent 75px
+            );
+            background-size: 25px 75px;
+            opacity: 0.5;
+        }
+        
+        /* Угловые акценты */
         .corner {
             position: absolute;
-            width: 170px;
-            height: 170px;
+            width: 40px;
+            height: 40px;
             z-index: 10;
-            filter: drop-shadow(0 10px 20px rgba(139, 69, 19, 0.45));
         }
-        .corner-tl { top: -25px; left: -25px; }
-        .corner-tr { top: -25px; right: -25px; transform: rotate(90deg); }
-        .corner-bl { bottom: -25px; left: -25px; transform: rotate(-90deg); }
-        .corner-br { bottom: -25px; right: -25px; transform: rotate(180deg); }
-
-        /* Боковые орнаменты — қошқар мүйіз + құс қанаты */
-        .side-ornament {
-            position: absolute;
-            width: 70px;
-            height: 220px;
-            z-index: 8;
-            opacity: 0.75;
+        
+        .corner-tl {
+            top: 10px;
+            left: 10px;
+            border-top: 4px solid #b8860b;
+            border-left: 4px solid #b8860b;
         }
-        .side-left { left: 12px; top: 50%; transform: translateY(-50%); }
-        .side-right { right: 12px; top: 50%; transform: translateY(-50%) rotate(180deg); }
-
-        /* Шаңырақ — ещё более аутентичный */
+        
+        .corner-tr {
+            top: 10px;
+            right: 10px;
+            border-top: 4px solid #006688;
+            border-right: 4px solid #006688;
+        }
+        
+        .corner-bl {
+            bottom: 10px;
+            left: 10px;
+            border-bottom: 4px solid #006688;
+            border-left: 4px solid #006688;
+        }
+        
+        .corner-br {
+            bottom: 10px;
+            right: 10px;
+            border-bottom: 4px solid #b8860b;
+            border-right: 4px solid #b8860b;
+        }
+        
+        /* Шаңырақ (минималистичный) */
         .shanyrak {
-            width: 155px;
-            height: 155px;
-            margin: 0 auto 28px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
             position: relative;
-            z-index: 25;
-            filter: drop-shadow(0 18px 25px rgba(0, 60, 80, 0.6));
-        }
-
-        .shanyrak-circle {
-            position: absolute;
-            inset: 0;
-            border: 9px solid #b8860b;
+            border: 4px solid #b8860b;
             border-radius: 50%;
-            background: #fdf8ed;
-            box-shadow: inset 0 0 30px #c9a36b;
+            box-shadow: 0 0 0 3px #006688;
         }
-
-        .shanyrak-center {
+        
+        .shanyrak::before {
+            content: '';
             position: absolute;
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            width: 46px; height: 46px;
-            background: #0a2f35;
-            border: 6px solid #b8860b;
+            width: 25px;
+            height: 25px;
+            background: #006688;
             border-radius: 50%;
+            border: 2px solid #b8860b;
         }
-
-        .shanyrak-spoke {
+        
+        .shanyrak .line {
             position: absolute;
-            top: 50%; left: 50%;
-            width: 7px;
-            height: 78px;
-            background: linear-gradient(#b8860b, #006688, #b8860b);
-            transform-origin: center top;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #b8860b;
+            transform-origin: center;
         }
-        .shanyrak-spoke:nth-child(2) { transform: rotate(45deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(3) { transform: rotate(90deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(4) { transform: rotate(135deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(5) { transform: rotate(180deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(6) { transform: rotate(225deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(7) { transform: rotate(270deg) translateX(-50%); }
-        .shanyrak-spoke:nth-child(8) { transform: rotate(315deg) translateX(-50%); }
-
-        /* Контент */
-        .content { position: relative; z-index: 30; text-align: center; }
-
+        
+        .shanyrak .line:nth-child(1) { transform: rotate(0deg); }
+        .shanyrak .line:nth-child(2) { transform: rotate(45deg); }
+        .shanyrak .line:nth-child(3) { transform: rotate(90deg); }
+        .shanyrak .line:nth-child(4) { transform: rotate(135deg); }
+        
+        .content {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+        }
+        
         .event-type {
-            font-size: 26px;
-            letter-spacing: 12px;
+            font-size: 20px;
+            letter-spacing: 8px;
             color: #8b5a2b;
-            font-weight: 600;
             margin-bottom: 10px;
             text-transform: uppercase;
         }
-
+        
         .couple {
-            font-family: 'Playfair Display', serif;
-            font-size: 82px;
-            font-weight: 700;
-            color: #0a2f35;
-            line-height: 1.02;
-            margin: 12px 0 15px;
-            text-shadow: 4px 4px 0 #e8d9c4;
+            font-size: 64px;
+            font-weight: 600;
+            color: #0e3b45;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 0 #e8d9c4;
         }
-
+        
         .couple span {
-            font-size: 56px;
-            color: #b8860b;
-            margin: 0 20px;
-        }
-
-        .blessing {
-            font-size: 31px;
-            color: #006688;
-            font-style: italic;
-            margin: 30px 0 40px;
-            padding: 16px 0;
-            border-top: 3px solid #b8860b;
-            border-bottom: 3px solid #b8860b;
             display: inline-block;
-            line-height: 1.3;
+            font-size: 46px;
+            color: #b8860b;
+            margin: 0 15px;
         }
-
-        .date-box {
-            background: rgba(184, 134, 11, 0.09);
-            border: 5px double #8b5a2b;
-            border-radius: 9999px;
-            padding: 32px 50px;
-            margin: 35px 0;
-            box-shadow: inset 0 0 40px rgba(184, 134, 11, 0.22);
-        }
-
-        .date {
-            font-family: 'Playfair Display', serif;
-            font-size: 58px;
-            font-weight: 700;
-            color: #0a2f35;
-        }
-
-        .date small {
+        
+        .blessing {
             font-size: 26px;
             color: #006688;
-            display: block;
-            margin-top: 10px;
-            letter-spacing: 6px;
-        }
-
-        .venue { font-size: 44px; color: #8b5a2b; font-weight: 700; margin: 22px 0 10px; }
-        .address { font-size: 24px; color: #0a2f35; font-style: italic; background: rgba(0,102,136,0.08); padding: 12px 38px; border-radius: 50px; display: inline-block; }
-
-        .time {
-            font-size: 27px;
-            color: #006688;
-            margin: 28px 0;
-            padding: 16px 45px;
-            background: rgba(184, 134, 11, 0.13);
-            border-radius: 50px;
+            font-style: italic;
+            margin-bottom: 25px;
+            padding: 10px 0;
+            border-top: 2px solid #b8860b;
+            border-bottom: 2px solid #b8860b;
             display: inline-block;
+        }
+        
+        .date-box {
+            border: 3px double #8b5a2b;
+            border-radius: 200px;
+            padding: 20px 35px;
+            margin: 30px 0;
+            background: rgba(166, 124, 82, 0.05);
+        }
+        
+        .date {
+            font-size: 48px;
+            font-weight: 600;
+            color: #0e3b45;
+            line-height: 1.2;
+        }
+        
+        .date small {
+            font-size: 22px;
+            color: #006688;
+            display: block;
+            letter-spacing: 4px;
+        }
+        
+        .venue {
+            font-size: 36px;
+            color: #8b5a2b;
+            margin: 15px 0 5px;
             font-weight: 500;
         }
-
-        .rsvp {
-            margin: 50px 0 38px;
-            padding: 35px 30px;
-            background: linear-gradient(145deg, #0a2f35, #052a33);
-            border-radius: 9999px;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
-        }
-
-        .rsvp-label {
+        
+        .address {
             font-size: 20px;
-            letter-spacing: 8px;
-            color: #e8c070;
+            color: #0e3b45;
+            margin-bottom: 20px;
+            font-style: italic;
+            background: rgba(0, 102, 136, 0.08);
+            padding: 8px 25px;
+            display: inline-block;
+            border-radius: 50px;
+        }
+        
+        .time {
+            font-size: 22px;
+            color: #006688;
+            margin: 20px 0;
+            padding: 12px 30px;
+            background: rgba(184, 134, 11, 0.1);
+            display: inline-block;
+            border-radius: 50px;
+        }
+        
+        .rsvp {
+            margin: 40px 0 30px;
+            padding: 25px;
+            background: #0e3b45;
+            border-radius: 100px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rsvp-label {
+            font-size: 16px;
+            letter-spacing: 5px;
+            color: #b8860b;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-
+        
         .contact-button {
             display: inline-block;
             background: #b8860b;
-            color: #0a2f35;
-            padding: 20px 68px;
-            border-radius: 9999px;
+            color: #0e3b45;
+            padding: 18px 50px;
+            border-radius: 60px;
             text-decoration: none;
-            font-size: 25px;
-            font-weight: 700;
-            border: 4px solid #e8d9c4;
-            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.65);
+            font-size: 20px;
+            font-weight: 600;
+            border: 3px solid #e8d9c4;
             transition: all 0.4s ease;
         }
-
+        
         .contact-button:hover {
             background: #e5b73b;
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px #b8860b;
         }
-
+        
         .organizer {
             margin-top: 25px;
-            font-size: 23px;
-            color: #0a2f35;
+            font-size: 20px;
+            color: #0e3b45;
         }
-
+        
         .organizer a {
             color: #006688;
             text-decoration: none;
             border-bottom: 2px dotted #b8860b;
-            font-weight: 600;
         }
-
+        
         .footer {
-            margin-top: 45px;
-            padding-top: 25px;
-            border-top: 4px solid #b8860b;
-            font-size: 20px;
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 3px solid #8b5a2b;
+            font-size: 16px;
             color: #a67c52;
             display: flex;
             justify-content: center;
-            gap: 50px;
-            letter-spacing: 4px;
+            gap: 35px;
+            letter-spacing: 2px;
         }
-
-        .footer span { color: #006688; font-weight: 700; }
-
-        @media (max-width: 580px) {
-            .card { padding: 45px 28px 55px; }
-            .couple { font-size: 62px; }
-            .couple span { font-size: 42px; }
-            .date { font-size: 46px; }
-            .venue { font-size: 36px; }
-            .blessing { font-size: 26px; }
-            .shanyrak { width: 130px; height: 130px; }
+        
+        .footer span {
+            color: #006688;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 550px) {
+            .card { padding: 40px 25px; }
+            .couple { font-size: 44px; }
+            .couple span { font-size: 32px; }
+            .date { font-size: 36px; }
+            .date small { font-size: 18px; }
+            .venue { font-size: 28px; }
+            .blessing { font-size: 22px; }
         }
     </style>
 </head>
 <body>
     <div class="card">
-
-        <!-- Орнаменты -->
-        <div class="ornament-top"></div>
-        <div class="ornament-bottom"></div>
-
-        <!-- Угловые қошқар мүйіз -->
+        <!-- Линии по краям -->
+        <div class="lines-top"></div>
+        <div class="lines-bottom"></div>
+        <div class="lines-left"></div>
+        <div class="lines-right"></div>
+        
+        <!-- Угловые акценты -->
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
         <div class="corner corner-br"></div>
-
-        <!-- Боковые орнаменты (қошқар мүйіз + құс қанаты) -->
-        <div class="side-ornament side-left" style="background: url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 70 220%27><path d=%27M35 20 Q55 35 35 55 Q15 35 35 20%27 fill=%27none%27 stroke=%27%238b5a2b%27 stroke-width=%274%27/><path d=%27M35 65 Q55 80 35 100 Q15 80 35 65%27 fill=%27none%27 stroke=%27%23006688%27 stroke-width=%273%27/><circle cx=%2735%27 cy=%2740%27 r=%276%27 fill=%27%23b8860b%27/><circle cx=%2735%27 cy=%2785%27 r=%275%27 fill=%27%23b8860b%27/><path d=%27M20 120 Q35 140 50 120%27 fill=%27none%27 stroke=%27%238b5a2b%27 stroke-width=%273%27/><path d=%27M25 160 Q35 185 45 160%27 fill=%27none%27 stroke=%27%23006688%27 stroke-width=%272.5%27/></svg>') no-repeat center/contain;"></div>
-        <div class="side-ornament side-right"></div>
-
+        
         <div class="content">
-
             <!-- Шаңырақ -->
             <div class="shanyrak">
-                <div class="shanyrak-circle"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-spoke"></div>
-                <div class="shanyrak-center"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
-
-            <div class="event-type">ҰЛТТЫҚ ҚАЗАҚ ТОЙЫ</div>
-
+            
+            <div class="event-type">ҚАЗАҚ ТОЙЫ</div>
+            
             <h1 class="couple">
-                АЛМАС <span>&amp;</span> ЖАНАР
+                АЛМАС <span>&</span> ЖАНАР
             </h1>
-
-            <div class="blessing">Шаңырағыңыз биік болсын!<br>Бақыт пен дәулет, сыйластық пен береке үйіңізге қоныстасын</div>
-
+            
+            <div class="blessing">Шаңырағыңыз биік болсын</div>
+            
             <div class="date-box">
                 <div class="date">
-                    15 ТАМЫЗ 2026
-                    <small>СЕНБІ • САҒАТ 18:00</small>
+                    15 АВГУСТА 2026
+                    <small>суббота • 18:00</small>
                 </div>
             </div>
-
-            <div class="venue">«АЛТЫН ҰЯ» РЕСТОРАНЫ</div>
-            <div class="address">Алматы облысы, Қарасай ауданы</div>
-
-            <div class="time">Қонақтарды қабылдау — 17:00</div>
-
+            
+            <div class="venue">«АЛТЫН ҰЯ»</div>
+            <div class="address">Алматинская область, Карасайский район</div>
+            
+            <div class="time">
+                Сбор гостей • 17:00
+            </div>
+            
             <div class="rsvp">
-                <div class="rsvp-label">ҚАТЫСУЫҢЫЗДЫ РАСТАҢЫЗ</div>
-                <a href="https://wa.me/77771234567?text=Сәлеметсізбе! Мен Алмас пен Жанардың тойына қатысамын. 15 тамыз" 
-                   target="_blank" 
-                   class="contact-button">
-                    WhatsApp-қа жазу
+                <div class="rsvp-label">ПОДТВЕРДИТЕ УЧАСТИЕ</div>
+                <a href="https://wa.me/77771234567?text=Здравствуйте!%20Подтверждаю%20участие%20на%20свадьбе%20АЛМАС%20и%20ЖАНАР%2015%20августа" target="_blank" class="contact-button">
+                    WhatsApp
                 </a>
             </div>
-
+            
             <div class="organizer">
-                Ұйымдастырушы: <a href="tel:+77771234567">Айгүл • +7 (777) 123-45-67</a>
+                Организатор: <a href="tel:+77771234567">Айгүл, +7 (777) 123-45-67</a>
             </div>
-
+            
             <div class="footer">
-                <span>АЛМАТЫ</span> • 2026 • <span>БЕРЕКЕ БОЛСЫН</span>
+                <span>АЛМАТЫ</span> • 2026 • <span>БЕРЕКЕ</span>
             </div>
         </div>
     </div>
